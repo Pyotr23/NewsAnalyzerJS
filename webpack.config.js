@@ -104,12 +104,14 @@ module.exports = {
       inject: false,
       template: './src/pages/about/about.html',
       filename: 'about.html',
+      favicon: './src/favicon.ico',
       chunks: ['about']
     }),
     new HtmlWebpackPlugin({
       inject: false,
       template: './src/pages/analytics/analytics.html',
       filename: 'analytics.html',
+      favicon: './src/favicon.ico',
       chunks: ['analytics']
     }),
     new WebpackMd5Hash(),
