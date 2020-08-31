@@ -9,6 +9,39 @@
   <link rel="shortcut icon" href="favicon.ico">
 </head>
 <body class="body">
-  <h1>Первая</h1>
+  <div class="header">
+    <div class="header-main">
+      <a class="ref" href="index.html">
+        <picture>
+          <source srcSet="<%=require('../../images/header-main/logo-large.svg')%>" media="(min-width: 423px)" />
+          <img class="header-main__logo" src="<%=require('../../images/header-main/logo.svg')%>" alt="логотип" />
+        </picture>
+      </a>
+      <nav class="header-main__nav-menu">
+        <ul class="header-main__page-links">
+          <li class="header-main__link-item header-main__link-item_color_white" >
+            <a class="ref ref_color_white" href="index.html">Главная</a>
+          </li>
+          <li class="header-main__link-item">
+            <a class="ref ref_color_white" href="about.html">О проекте</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <main class="search">
+      <h1 class="search__title">Что в мире творится?</h1>
+      <p class="search__text">
+        Введите в поиске любую тему и узнайте, насколько популярной она была в новостях за прошедшую неделю.
+      </p>
+      <form class="form" >
+        <div class="form__input-container">
+          <input class="form__input" type="text" placeholder="Программирование" required></input>
+            <!-- {noValidateText && <p class="form__input-error">{noValidateText}</p>} -->
+        </div>
+        <button class="button button_active_blue" type="submit">Искать</button>
+        <!-- <Button text="Искать" modificatorClass="button_active_blue" type="submit"/> -->
+      </form>
+    </main>
+  </div>
 </body>
 </html>

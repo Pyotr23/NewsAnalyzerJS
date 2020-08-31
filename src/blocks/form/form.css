@@ -1,0 +1,17 @@
+@import url(./__input/form__input.css);
+@import url(./__input-container/form__input-container.css);
+@import url(./__input-error/form__input-error.css);
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Roboto', Arial, sans-serif;
+  position: relative;
+}
+
+@media screen and (min-width: 766px){
+  .form{
+    flex-direction: row;
+  }
+}

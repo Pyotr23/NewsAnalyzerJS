@@ -1,0 +1,28 @@
+@import url(./__title/search__title.css);
+@import url(./__text/search__text.css);
+
+.search {
+  margin: 30px auto 0;
+  font-family: 'Roboto', Arial, sans-serif;
+  padding: 0 calc(16px + (100vw - 320px)*(160 - 16)/(768 - 320));
+}
+
+@media screen and (min-width: 423px){
+  .search {
+    margin-top: 40px;
+  }
+}
+
+@media screen and (min-width: 770px){
+  .search{
+    padding: 0 calc(160px + (100vw - 768px)*(416 - 160)/(1440 - 768));
+    margin-top: calc(40px + (100vw - 768px)*(80 - 40)/(1440 - 768));
+  }
+}
+
+@media screen and (min-width: 1440px){
+  .search{
+    padding: 0 calc((100% - 608px)/2);
+    margin-top: 80px;
+  }
+}

@@ -1,0 +1,22 @@
+.search__text {
+  font-family: 'Roboto Slab', Arial, sans-serif;
+  font-size: 20px;
+  line-height: 26px;
+  margin: 0;
+  margin-bottom: 65px;
+  max-width: 550px;
+}
+
+@media screen and (min-width: 766px){
+  .search__text{
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: calc(24px + (100vw - 768px)*(64 - 24)/(1440 - 768));
+  }
+}
+
+@media screen and (min-width: 1440px){
+  .search__text{
+    margin-bottom: 64px;
+  }
+}

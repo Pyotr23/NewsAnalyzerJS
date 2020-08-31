@@ -1,0 +1,20 @@
+.button.button_place_cards {
+  background-color: white;
+  color: #1A1B22;
+  font-size: 18px;
+  line-height: 18px;
+  position: relative;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 427px){
+  .button.button_place_cards {
+    max-width: 240px;
+  }
+}
+
+@media screen and (min-width: 1024px){
+  .button.button_place_cards {
+    max-width: 288px;
+  }
+}
