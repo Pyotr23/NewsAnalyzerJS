@@ -1,0 +1,9 @@
+.footer__nav-menu {
+  margin-bottom: 40px;
+}
+
+@media screen and (min-width: 766px){
+  .footer__nav-menu {
+    margin-bottom: 0;
+  }
+}

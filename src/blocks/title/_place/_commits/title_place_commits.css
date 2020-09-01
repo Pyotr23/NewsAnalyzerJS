@@ -1,0 +1,32 @@
+.title.title_place_commits {
+  font-size: 30px;
+  line-height: 40px;
+  color: #1A1B22;
+  max-width: 336px;
+}
+
+@media screen and (min-width: 423px){
+  .title.title_place_commits {
+    line-height: 34px;
+  }
+}
+
+@media screen and (min-width: 770px){
+  .title.title_place_commits {
+    font-size: calc(30px + (100vw - 768px)*(40 - 30)/(1440 - 768));
+    line-height: calc(34px + (100vw - 768px)*(46 - 34)/(1440 - 768));
+  }
+}
+
+@media screen and (min-width: 1024px){
+  .title.title_place_commits {
+    max-width: 712px;
+  }
+}
+
+@media screen and (min-width: 1440px){
+  .title.title_place_commits {
+    font-size: 40px;
+    line-height: 46px;
+  }
+}

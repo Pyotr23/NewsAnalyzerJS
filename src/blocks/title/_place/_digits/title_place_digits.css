@@ -1,0 +1,26 @@
+.title.title_place_digits {
+  font-size: 30px;
+  line-height: 35px;
+  color: #1A1B22;
+  margin-bottom: 16px;
+}
+
+@media screen and (min-width: 427px){
+  .title.title_place_digits {
+    margin-bottom: 24px;
+  }
+}
+
+@media screen and (min-width: 770px){
+  .title.title_place_digits {
+    font-size: calc(30px + (100vw - 768px)*(40 - 30)/(1440 - 768));
+    line-height: calc(35px + (100vw - 768px)*(46 - 35)/(1440 - 768));
+  }
+}
+
+@media screen and (min-width: 1440px){
+  .title.title_place_digits {
+    font-size: 40px;
+    line-height: 46px;
+  }
+}

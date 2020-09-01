@@ -1,0 +1,13 @@
+.cards__header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 36px;
+}
+
+@media screen and (min-width: 766px){
+  .cards__header{
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: calc(32px + (100vw - 768px)*(64 - 32)/(1440 - 768));
+  }
+}
