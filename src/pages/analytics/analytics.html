@@ -9,6 +9,30 @@
   <link rel="shortcut icon" href="favicon.ico">
 </head>
 <body class="body">
-  <h1>Третья</h1>
+  <div class="header">
+    <div class="header-main">
+      <a class="ref" href="index.html">
+        <picture>
+          <source srcSet="<%=require('../../images/header-main/logo-black-large.svg')%>" media="(min-width: 423px)" />
+          <img class="header-main__logo" src="<%=require('../../images/header-main/logo-black.svg')%>" alt="логотип" />
+        </picture>
+      </a>
+      <nav class="header__nav-menu">
+        <ul class="header__page-links">
+          <li class="header__link-item" >
+            <a class="ref ref_hover_black" href="index.html">Главная</a>
+          </li>
+          <li class="header__link-item header__link-item_color_black">
+            <Ref text="О проекте" href="/about" modClasss="ref_color_black" />
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <!-- <AboutHeader />
+  <Description />
+  <Stack />
+  <Author />
+  <Commits /> -->
 </body>
 </html>

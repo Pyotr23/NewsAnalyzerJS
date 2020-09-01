@@ -9,6 +9,25 @@
   <link rel="shortcut icon" href="favicon.ico">
 </head>
 <body class="body">
-  <h1>Вторая</h1>
+  <header class="header">
+    <div class="header-main">
+      <a class="ref" href="index.html">
+        <picture>
+          <source srcSet="<%=require('../../images/header-main/logo-black-large.svg')%>" media="(min-width: 423px)" />
+          <img class="header-main__logo" src="<%=require('../../images/header-main/logo-black.svg')%>" alt="логотип" />
+        </picture>
+      </a>
+      <nav class="header-main__nav-menu">
+        <ul class="header-main__page-links">
+          <li class="header-main__link-item" >
+            <a class="ref ref_hover_black" href="index.html">Главная</a>
+          </li>
+          <li class="header-main__link-item header-main__link-item_color_black">
+            <a class="ref ref_color_black" href="about.html">О проекте</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 </body>
 </html>
