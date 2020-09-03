@@ -1,0 +1,9 @@
+@import url(./__avatar/committer__avatar.css);
+@import url(./__name/committer__name.css);
+@import url(./__mail/committer__mail.css);
+
+.committer {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 14px;
+}

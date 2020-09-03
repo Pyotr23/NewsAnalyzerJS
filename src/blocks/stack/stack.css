@@ -1,0 +1,21 @@
+@import url(./__list/stack__list.css);
+
+.stack {
+  background: #F5F6F7;
+  padding: 44px calc(16px + (100vw - 320px)*(40 - 16)/(768 - 320)) 36px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 768px){
+  .stack{
+    padding: calc(44px + (100vw - 768px)*(80 - 44)/(1440 - 768)) calc(40px + (100vw - 768px)*(104 - 40)/(1440 - 768)) calc(40px + (100vw - 768px)*(86 - 40)/(1440 - 768));
+  }
+}
+
+@media screen and (min-width: 1338px){
+  .stack{
+    flex-direction: row;
+    padding: 80px calc((100% - 1232px)/2) 86px
+  }
+}

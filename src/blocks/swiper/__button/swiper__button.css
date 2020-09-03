@@ -1,0 +1,13 @@
+.swiper__button {
+    width: 100%;
+    max-width: 288px;
+    margin: 0 auto;
+    margin-top: 24px;
+    display: none;
+}
+
+@media screen and (max-width: 500px) {
+    .swiper__button {
+        display: block;
+    }
+}

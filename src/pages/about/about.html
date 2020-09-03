@@ -29,5 +29,222 @@
       </nav>
     </div>
   </header>
+  <section class="description">
+    <h2 class="title title_place_description">
+      Клиентам
+    </h2>
+    <p class="description__text">
+      Этот сайт — дипломный проект студента Яндекс.Практикума. Его цель — показать, чему научился студент, какими технологиями владеет.
+    </p>
+    <p class="description__text">
+      Вёрстка сайта выполнена по методологии БЭМ. Это делает сайт гибким и масштабируемым. Кроме того, добавлять новые страницы и
+      функциональность проще и быстрее, чем в проектах, выполненных по другим методологиям. Также сайт проще и дешевле поддерживать.
+    </p>
+    <p class="description__text">
+      Карточки с новостями приходят с сервера и обрабатываются асинхронно. То есть сайт продолжает работать, пока от сервера приходит ответ.
+      Это повышает удобство использования сервиса.
+    </p>
+    <p class="description__text">
+      При создании проекта была использована сборка технологией Webpack. Это современный подход к разработке сайтов. Код оптимизируется,
+      а значит, сайт работает быстрее. Также сайт работает в старых браузерах. Даже если посетители — пользователи старых операционных систем,
+      у них не будет проблем с отображением. А значит, потенциальная аудитория возрастает.
+    </p>
+    <p class="description__text">
+      Проект был проверен экспертами Яндекс.Практикума. Если вашему бизнесу нужен сайт, мы рекомендуем обратиться к этому студенту.
+    </p>
+  </section>
+  <section class="stack">
+    <h2 class="title title_place_stack">
+      Используемые технологии
+    </h2>
+    <ul class="stack__list">
+      <li>
+        <figure class="technology">
+          <figcaption class="technology__name">HTML</figcaption>
+          <img src="<%=require('../../images/stack/html.svg')%>" alt="иконка HTML"/>
+        </figure>
+      </li>
+      <li>
+        <figure class="technology">
+          <figcaption class="technology__name">CSS</figcaption>
+          <img src="<%=require('../../images/stack/css.svg')%>" alt="иконка CSS"/>
+        </figure>
+      </li>
+      <li>
+        <figure class="technology">
+          <figcaption class="technology__name">Java Script</figcaption>
+          <img src="<%=require('../../images/stack/js.svg')%>" alt="иконка JS"/>
+        </figure>
+      </li>
+      <li>
+        <figure class="technology">
+          <figcaption class="technology__name">Webpack</figcaption>
+          <img src="<%=require('../../images/stack/webpack.svg')%>" alt="иконка Webpack"/>
+        </figure>
+      </li>
+    </ul>
+  </section>
+  <section class="author">
+    <div class="author__photo-wrapper">
+      <img class="author__photo" src="<%=require('../../images/author/avatar.jpg')%>" alt="фотография автора"/>
+    </div>
+    <div class="author__column">
+      <h2 class="title title_place_author">
+        Об авторе
+      </h2>
+      <p class="author__description">
+        Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, чем вы занимаетесь,
+        какими технологиями разработки владеете.
+      </p>
+      <p class="author__description">
+        Также можно рассказать о процессе обучения в Практикуме,
+        чему вы тут научились, и чем можете помочь потенциальным заказчикам.
+      </p>
+      <p class="author__description">
+        Если хотите, оставьте свои контакты: email и телефон.
+        Так заказчики смогут с вами связаться.
+      </p>
+    </div>
+  </section>
+  <section class="commits">
+    <div class="commits__header">
+      <h2 class="title title_place_commits">
+        История коммитов из&nbsp;GitHub
+      </h2>
+      <a class="ref ref_place_commits" href="https:\\github.com">
+        Открыть в Github &#62;
+      </a>
+    </div>
+    <div class="swiper-container swiper__container">
+      <div class="swiper-wrapper swiper__wrapper">
+        <a href="https:\\www.github.com" class="ref ref_place_commit-card swiper-slide swiper__slide">
+          <div class="commit-card">
+            <p class="commit-card__date">
+              14 августа, 2019
+            </p>
+            <div class="committer">
+              <img class="committer__avatar" src="<%=require('../../images/committer/committer-photo.jpg')%>" alt="фото" />
+              <div>
+                <h4 class="committer__name">Антон Дмитриев</h4>
+                <p class="committer__mail">anton@yandex.ru</p>
+              </div>
+            </div>
+            <Committer avatarSrc={avatar} name="Антон Дмитриев" mail="anton@yandex.ru"/>
+            <p class="commit-card__message">
+              Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.
+            </p>
+          </div>
+        </a>
+        <a href="https:\\www.github.com" class="ref ref_place_commit-card swiper-slide swiper__slide">
+          <div class="commit-card">
+            <p class="commit-card__date">
+              14 августа, 2019
+            </p>
+            <div class="committer">
+              <img class="committer__avatar" src="<%=require('../../images/committer/committer-photo.jpg')%>" alt="фото" />
+              <div>
+                <h4 class="committer__name">Антон Дмитриев</h4>
+                <p class="committer__mail">anton@yandex.ru</p>
+              </div>
+            </div>
+            <Committer avatarSrc={avatar} name="Антон Дмитриев" mail="anton@yandex.ru"/>
+            <p class="commit-card__message">
+              Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.
+            </p>
+          </div>
+        </a>
+        <a href="https:\\www.github.com" class="ref ref_place_commit-card swiper-slide swiper__slide">
+          <div class="commit-card">
+            <p class="commit-card__date">
+              14 августа, 2019
+            </p>
+            <div class="committer">
+              <img class="committer__avatar" src="<%=require('../../images/committer/committer-photo.jpg')%>" alt="фото" />
+              <div>
+                <h4 class="committer__name">Антон Дмитриев</h4>
+                <p class="committer__mail">anton@yandex.ru</p>
+              </div>
+            </div>
+            <Committer avatarSrc={avatar} name="Антон Дмитриев" mail="anton@yandex.ru"/>
+            <p class="commit-card__message">
+              Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.
+            </p>
+          </div>
+        </a>
+        <a href="https:\\www.github.com" class="ref ref_place_commit-card swiper-slide swiper__slide">
+          <div class="commit-card">
+            <p class="commit-card__date">
+              14 августа, 2019
+            </p>
+            <div class="committer">
+              <img class="committer__avatar" src="<%=require('../../images/committer/committer-photo.jpg')%>" alt="фото" />
+              <div>
+                <h4 class="committer__name">Антон Дмитриев</h4>
+                <p class="committer__mail">anton@yandex.ru</p>
+              </div>
+            </div>
+            <Committer avatarSrc={avatar} name="Антон Дмитриев" mail="anton@yandex.ru"/>
+            <p class="commit-card__message">
+              Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.
+            </p>
+          </div>
+        </a>
+        <a href="https:\\www.github.com" class="ref ref_place_commit-card swiper-slide swiper__slide">
+          <div class="commit-card">
+            <p class="commit-card__date">
+              14 августа, 2019
+            </p>
+            <div class="committer">
+              <img class="committer__avatar" src="<%=require('../../images/committer/committer-photo.jpg')%>" alt="фото" />
+              <div>
+                <h4 class="committer__name">Антон Дмитриев</h4>
+                <p class="committer__mail">anton@yandex.ru</p>
+              </div>
+            </div>
+            <Committer avatarSrc={avatar} name="Антон Дмитриев" mail="anton@yandex.ru"/>
+            <p class="commit-card__message">
+              Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.
+            </p>
+          </div>
+        </a>
+      </div>
+      <div class="swiper__pagination"></div>
+    </div>
+    <button class="button button_place_commits">
+      Открыть в GitHub
+    </button>
+  </section>
+  <footer class="footer">
+    <div class="footer__text-container">
+      <nav class="footer__nav-menu">
+        <ul class="footer__page-links">
+          <li class="footer__link-item">
+            <a class="ref ref_place_footer" href="index.html">Главная</a>
+          </li>
+          <li class="footer__link-item">
+            <a class="ref ref_place_footer" href="about.html">О проекте</a>
+          </li>
+          <li class="footer__link-item">
+            <a class="ref ref_place_footer" href="https://praktikum.yandex.ru" target="_blank">Яндекс.Практикум</a>
+          </li>
+        </ul>
+      </nav>
+      <p class="footer__copyright">
+        &copy; 2020 by Pyotr Kolesnikov
+      </p>
+    </div>
+    <ul class="footer__icons">
+      <li class="footer__icon-item">
+        <a class="ref" href="https:\\www.github.com" target="_blank">
+          <img src="<%=require('../../images/footer/github.svg')%>" alt="иконка Github"/>
+        </a>
+      </li>
+      <li class="footer__icon-item">
+        <a class="ref" href="https:\\www.facebook.com" target="_blank">
+          <img src="<%=require('../../images/footer/facebook.svg')%>" alt="иконка Facebook"/>
+        </a>
+      </li>
+    </ul>
+  </footer>
 </body>
 </html>

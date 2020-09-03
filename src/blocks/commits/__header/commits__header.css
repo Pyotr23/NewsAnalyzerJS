@@ -1,0 +1,25 @@
+.commits__header {
+  display: flex;
+  flex-direction: row;
+  margin: 0 calc(16px + (100vw - 320px)*(40 - 16)/(768 - 320)) 16px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 423px){
+  .commits__header{
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (min-width: 768px){
+  .commits__header{
+    margin: 0 calc(40px + (100vw - 768px)*(104 - 40)/(1440 - 768)) calc(30px + (100vw - 768px)*(50 - 30)/(1440 - 768));
+  }
+}
+
+@media screen and (min-width: 1440px){
+  .commits__header{
+    margin: 0 calc((100% - 1232px)/2) 50px;
+  }
+}

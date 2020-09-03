@@ -1,0 +1,19 @@
+.swiper__button-prev {
+    width: 40px;
+    height: 40px;
+    transform: translateY(-50%) rotate(180deg);
+    background-image: url('../../../images/swiper/button-next.svg');
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    z-index: 10;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .swiper__button-prev {
+        display: none;
+    }
+}
