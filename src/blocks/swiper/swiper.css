@@ -1,0 +1,13 @@
+@import url("../../../node_modules/swiper/swiper-bundle.css");
+@import url("./__bullet/swiper__bullet.css");
+@import url("./__container/swiper__container.css");
+@import url("./__button-next/swiper__button-next.css");
+@import url("./__button-prev/swiper__button-prev.css");
+@import url("./__pagination/swiper__pagination.css");
+@import url("./__button/swiper__button.css");
+@import url("./__slide/swiper__slide.css");
+@import url("./__wrapper/swiper__wrapper.css");
+
+.swiper {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+}

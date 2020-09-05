@@ -1,0 +1,27 @@
+@import url('./__date/commit-card__date.css');
+@import url('./__message/commit-card__message.css');
+
+.commit-card {
+  font-family: 'Roboto', Arial, sans-serif;
+  background-color: white;
+  background-color: white;
+  padding: 16px;
+  width: 288px;
+  height: 264px;
+  border-radius: 16px;
+  box-sizing: border-box;
+}
+
+@media screen and (min-width: 427px){
+  .commit-card{
+    height: 242px;
+    padding: 24px;
+  }
+}
+
+@media screen and (min-width: 1024px){
+  .commit-card{
+    width: 400px;
+    height: 288px;
+  }
+}

@@ -1,0 +1,17 @@
+.swiper__bullet {
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    margin-right: 8px;
+    background: #D1D2D6;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.swiper__bullet:last-of-type {
+    margin-right: 0;
+}
+
+.swiper__bullet_active {
+    background: #1A1B22;
+}

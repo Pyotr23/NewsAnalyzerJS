@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Аналитика</title>
+  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>">
+  <script src="<%= htmlWebpackPlugin.files.js %>" defer></script>
+  <link rel="shortcut icon" href="favicon.ico">
+</head>
+<body class="body">
+  <header class="header">
+    <div class="header-main">
+      <a class="ref" href="index.html">
+        <picture>
+          <source srcSet="<%=require('../../images/header-main/logo-black-large.svg')%>" media="(min-width: 423px)" />
+          <img class="header-main__logo" src="<%=require('../../images/header-main/logo-black.svg')%>" alt="логотип" />
+        </picture>
+      </a>
+      <nav class="header-main__nav-menu">
+        <ul class="header-main__page-links">
+          <li class="header-main__link-item" >
+            <a class="ref ref_hover_black" href="index.html">Главная</a>
+          </li>
+          <li class="header-main__link-item">
+            <a class="ref ref_hover_black" href="about.html">О проекте</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <section class="digits">
+    <a href="index.html" class="ref ref_place_digits">Главная</a>
+    <span class="digits__page-name"> / Аналитика</span>
+    <h2 class="title title_place_digits">
+      Вы спросили «Путешествия»
+    </h2>
+    <p class="digits__description">
+      Новостей за неделю: <b>34 324</b>
+    </p>
+    <p class="digits__description">
+      Упоминаний в заголовках: <b>235</b>
+    </p>
+  </section>
+  <section class="daily">
+    <h2 class="title title_place_daily">
+      Аналитика по дням
+    </h2>
+    <div class="table">
+      <div class="table-row">
+        <p class="table-row__first-column table-row__header">Дата (август)</p>
+        <p class="table-row__second-column table-row__header">Кол-во упоминаний</p>
+      </div>
+      <div class="table__line"></div>
+      <div class="table-row">
+        <p class="table-row__first-column"></p>
+        <div class="table-row__second-column table-row__header table-row__digits">
+          0
+          <p class="table-row__digit">25</p>
+          <p class="table-row__digit">50</p>
+          <p class="table-row__digit">75</p>
+          <p class="table-row__digit">100</p>
+        </div>
+      </div>
+      <div class="table-row table-row_margin-bottom">
+        <p class="table-row__first-column">19, пн</p>
+        <div class="table-row__second-column">
+          15
+          <div class="table-row__shifter" style="width: 85%"></div>
+        </div>
+      </div>
+      <div class="table-row table-row_margin-bottom">
+        <p class="table-row__first-column">20, вт</p>
+        <div class="table-row__second-column">
+          18
+          <div class="table-row__shifter" style="width: 82%"></div>
+        </div>
+      </div>
+      <div class="table-row table-row_margin-bottom">
+        <p class="table-row__first-column">21, ср</p>
+        <div class="table-row__second-column">
+          11
+          <div class="table-row__shifter" style="width: 89%"></div>
+        </div>
+      </div>
+      <div class="table-row table-row_margin-bottom">
+        <p class="table-row__first-column">22, чт</p>
+        <div class="table-row__second-column">
+          39
+          <div class="table-row__shifter" style="width: 61%"></div>
+        </div>
+      </div>
+      <div class="table-row table-row_margin-bottom">
+        <p class="table-row__first-column">23, пт</p>
+        <div class="table-row__second-column">
+          45
+          <div class="table-row__shifter" style="width: 55%"></div>
+        </div>
+      </div>
+      <div class="table-row table-row_margin-bottom">
+        <p class="table-row__first-column">24, сб</p>
+        <div class="table-row__second-column">
+          73
+          <div class="table-row__shifter" style="width: 27%"></div>
+        </div>
+      </div>
+      <div class="table-row table-row_margin-bottom_last">
+        <p class="table-row__first-column">25, вс</p>
+        <div class="table-row__second-column">
+          34
+          <div class="table-row__shifter" style="width: 66%"></div>
+        </div>
+      </div>
+      <div class="table-row">
+        <p class="table-row__first-column"></p>
+        <div class="table-row__second-column table-row__header table-row__digits">
+          0
+          <p class="table-row__digit">25</p>
+          <p class="table-row__digit">50</p>
+          <p class="table-row__digit">75</p>
+          <p class="table-row__digit">100</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="footer__text-container">
+      <nav class="footer__nav-menu">
+        <ul class="footer__page-links">
+          <li class="footer__link-item">
+            <a class="ref ref_place_footer" href="index.html">Главная</a>
+          </li>
+          <li class="footer__link-item">
+            <a class="ref ref_place_footer" href="about.html">О проекте</a>
+          </li>
+          <li class="footer__link-item">
+            <a class="ref ref_place_footer" href="https://praktikum.yandex.ru" target="_blank">Яндекс.Практикум</a>
+          </li>
+        </ul>
+      </nav>
+      <p class="footer__copyright">
+        &copy; 2020 by Pyotr Kolesnikov
+      </p>
+    </div>
+    <ul class="footer__icons">
+      <li class="footer__icon-item">
+        <a class="ref" href="https://www.github.com" target="_blank">
+          <img src="<%=require('../../images/footer/github.svg')%>" alt="иконка Github"/>
+        </a>
+      </li>
+      <li class="footer__icon-item">
+        <a class="ref" href="https://www.facebook.com" target="_blank">
+          <img src="<%=require('../../images/footer/facebook.svg')%>" alt="иконка Facebook"/>
+        </a>
+      </li>
+    </ul>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,18 @@
+@import url(./_place/_header/title_place_header.css);
+@import url(./_place/_no-result/title_place_no-result.css);
+@import url(./_place//_cards/title_place_cards.css);
+@import url(./_place/_author/title_place_author.css);
+@import url(./_place/_description/title_place_description.css);
+@import url(./_place/_stack/title_place_stack.css);
+@import url(./_place/_commits/title_place_commits.css);
+@import url(./_place/_digits/title_place_digits.css);
+@import url(./_place/_daily/title_place_daily.css);
+@import url(./_place/_bad-request/title_bad-request.css);
+
+.title {
+    margin: 0;
+    font-family: 'Roboto Slab', Arial, sans-serif;
+    font-size: 36px;
+    line-height: 40px;
+    color: white;
+}

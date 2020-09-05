@@ -1,0 +1,28 @@
+.footer__link-item {
+  margin-bottom: 24px;
+}
+
+.footer__link-item:last-child {
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 766px){
+  .footer__link-item {
+    margin-bottom: 0;
+    margin-right: calc(25px + (100vw - 768px)*(43 - 25)/(1440 - 768));
+  }
+
+  .footer__link-item:last-child {
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width: 1440px){
+  .footer__link-item {
+    margin-right: 43px;
+  }
+
+  .footer__link-item:last-child {
+    margin-right: 0;
+  }
+}

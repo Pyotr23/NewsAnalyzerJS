@@ -1,0 +1,26 @@
+@import url(./__photo/author__photo.css);
+@import url(./__description/author__description.css);
+@import url(./__photo-wrapper/author__photo-wrapper.css);
+
+.author {
+  margin: 32px calc(16px + (100vw - 320px)*(40 - 16)/(768 - 320)) 32px;
+  font-family: 'Roboto', Arial, sans-serif;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media screen and (min-width: 766px){
+  .author{
+    margin: calc(40px + (100vw - 768px)*(80 - 40)/(1440 - 768)) calc(40px + (100vw - 768px)*(104 - 40)/(1440 - 768)) calc(46px + (100vw - 768px)*(80 - 46)/(1440 - 768));
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 1440px){
+  .author {
+    margin: 80px calc((100% - 1232px)/2);
+  }
+}

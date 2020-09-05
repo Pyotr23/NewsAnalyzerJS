@@ -1,0 +1,26 @@
+@import url(./__header/commits__header.css);
+
+.commits {
+    background-color: #F5F6F7;
+    padding: 30px 0 32px;
+    position: relative;
+}
+
+@media screen and (min-width: 423px){
+  .commits{
+    padding-top: 40px;
+    padding-bottom: 36px;
+  }
+}
+
+@media screen and (min-width: 768px){
+  .commits{
+    padding: calc(40px + (100vw - 768px)*(72 - 40)/(1440 - 768)) 0 calc(36px + (100vw - 768px)*(72 - 36)/(1440 - 768));
+  }
+}
+
+@media screen and (min-width: 1440px){
+  .commits{
+    padding: 72px 0 72px;
+  }
+}

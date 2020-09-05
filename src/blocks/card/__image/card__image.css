@@ -1,0 +1,23 @@
+.card__image {
+  width:100%;
+  height: 196px;
+  object-fit: fill;
+}
+
+@media screen and (min-width: 425px){
+  .card__image {
+    height: calc(196px + (100vw - 425px)*(150 - 196)/(768 - 425));
+  }
+}
+
+@media screen and (min-width: 768px){
+  .card__image {
+    height: calc(150px + (100vw - 768px)*(272 - 150)/(1440 - 768));
+  }
+}
+
+@media screen and (min-width: 1440px){
+  .card__image {
+    height: 272px;
+  }
+}

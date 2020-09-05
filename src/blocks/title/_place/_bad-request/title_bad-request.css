@@ -1,0 +1,14 @@
+.title.title_place_bad-request {
+  color: black;
+  background-color: #f5f6f7;
+  font-size: 18px;
+  line-height: 24px;
+  margin: 0 calc(16px + (100vw - 320px)*(40 - 16)/(768 - 320));
+}
+
+@media screen and (min-width: 770px){
+  .title.title_place_bad-request {
+    margin: 0 auto;
+    max-width: 688px;
+  }
+}

@@ -1,0 +1,16 @@
+.stack__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: grid;
+  column-gap: 33px;
+  row-gap: 33px;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 2fr));
+}
+
+@media screen and (min-width: 1338px){
+  .stack__list{
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 14px;
+  }
+}

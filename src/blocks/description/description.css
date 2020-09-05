@@ -1,0 +1,25 @@
+@import url(./__text/description__text.css);
+
+.description {
+  padding: 16px calc(16px + (100vw - 320px)*(40 - 16)/(768 - 320)) 16px;
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+@media screen and (min-width: 423px){
+  .description{
+    padding-top: 30px;
+    padding-bottom: 56px;
+  }
+}
+
+@media screen and (min-width: 766px){
+  .description{
+    padding: calc(30px + (100vw - 768px)*(80 - 30)/(1440 - 768)) calc(40px + (100vw - 768px)*(104 - 40)/(1440 - 768)) calc(56px + (100vw - 768px)*(94 - 56)/(1440 - 768));
+  }
+}
+
+@media screen and (min-width: 1440px){
+  .description{
+    padding: 80px calc((100% - 1232px)/2) 96px;
+  }
+}

@@ -1,0 +1,23 @@
+@import url(./_place/_cards/ref_place_cards.css);
+@import url(./_place/_footer/ref_place_footer.css);
+@import url(./_color/_white/ref_color_white.css);
+@import url(./_color/_black/ref_color_black.css);
+@import url(./_hover/_white/ref_hover_white.css);
+@import url(./_hover/_black/ref_hover_black.css);
+@import url(./_place/_commit-card/ref_place_commit-card.css);
+@import url(./_place/_commits/ref_place_commits.css);
+@import url(./_place/_digits/ref_place_digits.css);
+@import url(./_place/_card/ref_place_card.css);
+
+.ref {
+  font-family: 'Roboto', Arial, sans-serif;
+  text-decoration: none;
+  display: inline-block;
+  color: #B6BCBF;
+  cursor: pointer;
+  margin: auto 0;
+}
+
+.ref:hover {
+  opacity: .9;
+}

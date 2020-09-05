@@ -1,0 +1,30 @@
+@import url(./_error/form__input_error.css);
+
+.form__input {
+  border: 1px solid #D1D2D6;
+  border-radius: 100px;
+  padding: 16px 16px;
+  font-size: 16px;
+  line-height: 22px;
+  width: 100%;
+  box-sizing: border-box;
+  height: 56px;
+}
+
+.form__input:focus {
+  outline: none;
+  border: 3px solid #2F71E5;
+}
+
+@media screen and (min-width: 766px){
+  .form__input {
+    padding-right: calc(160px + 16px);  /* Длина кнопки "Искать" + внутренний отступ */
+    padding-left: 22px;
+  }
+}
+
+@media screen and (min-width: 1024px){
+  .form__input {
+    height: 62px;
+  }
+}

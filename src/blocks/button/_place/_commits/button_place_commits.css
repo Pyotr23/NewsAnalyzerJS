@@ -1,0 +1,17 @@
+.button.button_place_commits {
+  color: #1A1B22;
+  background-color: transparent;
+  max-width: 288px;
+  margin: 0 auto;
+  border: 1px solid #1A1B22;
+  width: -webkit-fill-available;
+  font-size: 18px;
+  line-height: 18px;
+  position: relative;
+}
+
+@media screen and (min-width: 766px){
+  .button.button_place_commits {
+    display: none;
+  }
+}

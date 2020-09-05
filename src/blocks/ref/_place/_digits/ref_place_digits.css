@@ -1,0 +1,25 @@
+.ref.ref_place_digits {
+  color: #1A1B22;
+  font-size: 18px;
+  line-height: 24px;
+  margin-bottom: calc(16px + (100vw - 427px)*(64 - 16)/(768 - 427));
+  display: none;
+}
+
+@media screen and (min-width: 427px){
+  .ref.ref_place_digits {
+    display: inline-block;
+  }
+}
+
+@media screen and (min-width: 768px){
+  .ref.ref_place_digits {
+    margin-bottom: 64px;
+  }
+}
+
+@media screen and (min-width: 1024px){
+  .ref.ref_place_digits {
+    margin-bottom: 80px;
+  }
+}

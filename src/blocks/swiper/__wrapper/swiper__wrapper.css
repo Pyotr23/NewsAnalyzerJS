@@ -1,0 +1,17 @@
+@media screen and (max-width: 768px) {
+  .swiper__wrapper{
+    margin-bottom: calc(10px + (100vw - 320px)*(28 - 10)/(768 - 320));
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .swiper__wrapper{
+    margin-bottom: calc(28px + (100vw - 768px)*(40 - 28)/(1440 - 768));
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .swiper__wrapper{
+    margin-bottom: 40px;
+  }
+}

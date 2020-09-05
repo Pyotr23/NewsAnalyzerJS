@@ -1,0 +1,12 @@
+.ref.ref_place_commit-card {
+  margin-right: 8px;
+  border-radius: 16px;
+}
+
+.ref.ref_place_commit-card:last-child {
+  margin-right: 0;
+}
+
+.ref.ref_place_commit-card:hover {
+  box-shadow: 3px -0 3px black;
+}

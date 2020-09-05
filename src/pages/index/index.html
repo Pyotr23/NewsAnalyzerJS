@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Анализ новостей</title>
+  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>">
+  <script src="<%= htmlWebpackPlugin.files.js %>" defer></script>
+  <link rel="shortcut icon" href="favicon.ico">
+</head>
+<body class="body">
+  <header class="header header_place_index">
+    <div class="header-main">
+      <a class="ref" href="index.html">
+        <picture>
+          <source srcSet="<%=require('../../images/header-main/logo-large.svg')%>" media="(min-width: 423px)" />
+          <img class="header-main__logo" src="<%=require('../../images/header-main/logo.svg')%>" alt="логотип" />
+        </picture>
+      </a>
+      <nav class="header-main__nav-menu">
+        <ul class="header-main__page-links">
+          <li class="header-main__link-item header-main__link-item_color_white" >
+            <a class="ref ref_color_white" href="index.html">Главная</a>
+          </li>
+          <li class="header-main__link-item">
+            <a class="ref ref_color_white" href="about.html">О проекте</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="search">
+      <h1 class="search__title">Что в мире творится?</h1>
+      <p class="search__text">
+        Введите в поиске любую тему и узнайте, насколько популярной она была в новостях за прошедшую неделю.
+      </p>
+      <form class="form" >
+        <div class="form__input-container">
+          <input class="form__input" type="text" placeholder="Программирование" required></input>
+        </div>
+        <button class="button button_active_blue" type="submit">Искать</button>
+      </form>
+    </div>
+  </header>
+  <div class="loading">
+    <i class="loading__spinner"></i>
+    <p class="loading__text">Идёт загрузка новостей...</p>
+  </div>
+  <div class="no-result">
+    <img class="no-result__image" src="<%=require('../../images/no-result/not-found.svg')%>" alt="грустная лупа"/>
+    <h2 class="title title_place_no-result">
+      Ничего не найдено
+    </h2>
+    <p class="no-result__text">К сожалению по вашему запросу ничего не найдено.</p>
+  </div>
+  <main class="cards">
+    <div class="cards__header">
+      <h2 class="title title_place_cards">Результаты поиска</h2>
+      <a class="ref ref_place_cards" href="analytics.html">
+        Посмотреть аналитику >
+      </a>
+    </div>
+    <ul class="cards__list">
+      <li class="card">
+        <a class="ref ref_place_card" href="www.yandex.ru" target="_blank">
+          <div class="card__container">
+            <img class="card__image" src="<%=require('../../images/cards/womanyellingcat.jpg')%>" alt="заглавная картинка"/>
+            <div class="card__text-content">
+              <p class="card__text-date">2 августа, 2019</p>
+              <h3 class="card__title">Национальное достояние - парки</h3>
+              <p class="card__text">В 2016 году Америка отмечала важный юбилей:
+                сто лет назад здесь начала складываться система национальных парков...</p>
+            </div>
+          </div>
+          <p class="card__source">Медуза</p>
+        </a>
+      </li>
+      <li class="card">
+        <a class="ref ref_place_card" href="www.yandex.ru" target="_blank">
+          <div class="card__container">
+            <img class="card__image" src="<%=require('../../images/cards/womanyellingcat.jpg')%>" alt="заглавная картинка"/>
+            <div class="card__text-content">
+              <p class="card__text-date">2 августа, 2019</p>
+              <h3 class="card__title">Национальное достояние - парки</h3>
+              <p class="card__text">В 2016 году Америка отмечала важный юбилей:
+                сто лет назад здесь начала складываться система национальных парков...</p>
+            </div>
+          </div>
+          <p class="card__source">Медуза</p>
+        </a>
+      </li>
+      <li class="card">
+        <a class="ref ref_place_card" href="https://www.yandex.ru" target="_blank">
+          <div class="card__container">
+            <img class="card__image" src="<%=require('../../images/cards/womanyellingcat.jpg')%>" alt="заглавная картинка"/>
+            <div class="card__text-content">
+              <p class="card__text-date">2 августа, 2019</p>
+              <h3 class="card__title">Национальное достояние - парки</h3>
+              <p class="card__text">В 2016 году Америка отмечала важный юбилей:
+                сто лет назад здесь начала складываться система национальных парков...</p>
+            </div>
+          </div>
+          <p class="card__source">Медуза</p>
+        </a>
+      </li>
+    </ul>
+    <button class="button button_place_cards" type="button">Показать ещё</button>
+  </main>
+  <section class="author">
+    <div class="author__photo-wrapper">
+      <img class="author__photo" src="<%=require('../../images/author/avatar.jpg')%>" alt="фотография автора"/>
+    </div>
+    <div class="author__column">
+      <h2 class="title title_place_author">
+        Об авторе
+      </h2>
+      <p class="author__description">
+        Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, чем вы занимаетесь,
+        какими технологиями разработки владеете.
+      </p>
+      <p class="author__description">
+        Также можно рассказать о процессе обучения в Практикуме,
+        чему вы тут научились, и чем можете помочь потенциальным заказчикам.
+      </p>
+      <p class="author__description">
+        Если хотите, оставьте свои контакты: email и телефон.
+        Так заказчики смогут с вами связаться.
+      </p>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="footer__text-container">
+      <nav class="footer__nav-menu">
+        <ul class="footer__page-links">
+          <li class="footer__link-item">
+            <a class="ref ref_place_footer" href="index.html">Главная</a>
+          </li>
+          <li class="footer__link-item">
+            <a class="ref ref_place_footer" href="about.html">О проекте</a>
+          </li>
+          <li class="footer__link-item">
+            <a class="ref ref_place_footer" href="https://praktikum.yandex.ru" target="_blank">Яндекс.Практикум</a>
+          </li>
+        </ul>
+      </nav>
+      <p class="footer__copyright">
+        &copy; 2020 by Pyotr Kolesnikov
+      </p>
+    </div>
+    <ul class="footer__icons">
+      <li class="footer__icon-item">
+        <a class="ref" href="https://www.github.com" target="_blank">
+          <img src="<%=require('../../images/footer/github.svg')%>" alt="иконка Github"/>
+        </a>
+      </li>
+      <li class="footer__icon-item">
+        <a class="ref" href="https://www.facebook.com" target="_blank">
+          <img src="<%=require('../../images/footer/facebook.svg')%>" alt="иконка Facebook"/>
+        </a>
+      </li>
+    </ul>
+  </footer>
+</body>
+</html>

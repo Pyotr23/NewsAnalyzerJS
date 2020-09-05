@@ -1,0 +1,18 @@
+.title.title_place_daily {
+  font-size: 22px;
+  line-height: 30px;
+  color: #1A1B22;
+  margin-bottom: calc(14px + (100vw - 320px)*(48 - 14)/(768 - 320));
+}
+
+@media screen and (min-width: 423px){
+  .title.title_place_daily {
+    font-size: 26px;
+  }
+}
+
+@media screen and (min-width: 770px){
+  .title.title_place_daily {
+    margin-bottom: 48px;
+  }
+}

@@ -1,0 +1,45 @@
+@import url(./_place/_cards/button_place_cards.css);
+@import url(./_place/_commits/button_place_commits.css);
+@import url(./_active/_blue/button_active_blue.css);
+@import url(./_disabled/button_disabled.css);
+
+.button {
+  font-family: 'Roboto', Helvetica, sans-serif;
+  height: 56px;
+  border-radius: 100px;
+  padding: 17px 16px;
+  font-size: 16px;
+  line-height: 22px;
+  background-color: #2F71E5;
+  color: white;
+  border-width: 0;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+  max-width: 310px;
+  display: block;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:hover {
+  opacity: .9;
+}
+
+@media screen and (min-width: 766px){
+  .button{
+    max-width: 168px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 10;
+  }
+}
+
+@media screen and (min-width: 1024px){
+  .button{
+    height: 64px;
+  }
+}
