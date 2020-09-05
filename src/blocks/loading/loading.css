@@ -1,0 +1,12 @@
+@import url(./__spinner/loading__spinner.css);
+@import url(./__text/loading__text.css);
+@import url(./_visible/loading_visible.css);
+
+.loading {
+  background: #F5F6F7;
+  padding-top: 40px;
+  flex-direction: column;
+  text-align: center;
+  font-family: 'Roboto', Arial, sans-serif;
+  display: flex;
+}

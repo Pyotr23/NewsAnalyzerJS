@@ -1,0 +1,12 @@
+.table-row__digits {
+  display: none;
+  flex-direction: row;
+  padding-left: 0;
+  margin-bottom: 8px;
+}
+
+@media screen and (min-width: 423px){
+  .table-row__digits {
+    display: flex;
+  }
+}

@@ -1,0 +1,15 @@
+@import url(./__first-column/table-row__first-column.css);
+@import url(./__second-column/table-row__second-column.css);
+@import url(./__header/table-row__header.css);
+@import url(./__shifter/table-row__shifter.css);
+@import url(./__digits/table-row__digits.css);
+@import url(./__digit/table-row__digit.css);
+
+@import url(./_margin-bottom/table-row_margin-bottom.css);
+@import url(./_margin-bottom_last/table-row_margin-bottom_last.css);
+
+.table-row {
+  font-family: 'Roboto', Arial, sans-serif;
+  display: flex;
+  flex-direction: row;
+}

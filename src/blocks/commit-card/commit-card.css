@@ -21,7 +21,7 @@
 
 @media screen and (min-width: 1024px){
   .commit-card{
-    max-width: 400px;
+    width: 400px;
     height: 288px;
   }
 }

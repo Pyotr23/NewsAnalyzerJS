@@ -41,6 +41,17 @@
       </form>
     </main>
   </header>
+  <div class="loading">
+    <i class="loading__spinner"></i>
+    <p class="loading__text">Идёт загрузка новостей...</p>
+  </div>
+  <div class="no-result">
+    <img class="no-result__image" src="<%=require('../../images/no-result/not-found.svg')%>" alt="грустная лупа"/>
+    <h2 class="title title_place_no-result">
+      Ничего не найдено
+    </h2>
+    <p class="no-result__text">К сожалению по вашему запросу ничего не найдено.</p>
+  </div>
   <section class="cards">
     <div class="cards__header">
       <h2 class="title title_place_cards">Результаты поиска</h1>

@@ -1,0 +1,13 @@
+.table-row__first-column {
+  font-size: 18px;
+  line-height: 48px;
+  color: #1A1B22;
+  width: 80px;
+  margin: 0;
+}
+
+@media screen and (min-width: 423px){
+  .table-row__first-column {
+    line-height: 20px;
+  }
+}

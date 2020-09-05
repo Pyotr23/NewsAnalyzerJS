@@ -1,0 +1,10 @@
+.table__line {
+  border-bottom: 2px solid black;
+  margin-bottom: 6px;
+}
+
+@media screen and (min-width: 423px){
+  .table__line {
+    margin-bottom: 14px;
+  }
+}

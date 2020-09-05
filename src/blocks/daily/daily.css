@@ -1,0 +1,17 @@
+.daily {
+    padding: calc(20px + (100vw - 320px)*(40 - 20)/(768 - 320)) calc(16px + (100vw - 320px)*(40 - 16)/(768 - 320)) 26px;
+    background: #F5F6F7;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+@media screen and (min-width: 770px){
+  .daily{
+    padding: calc(40px + (100vw - 768px)*(80 - 40)/(1440 - 768)) calc(40px + (100vw - 768px)*(104 - 40)/(1440 - 768)) calc(26px + (100vw - 768px)*(66 - 26)/(1440 - 768));
+  }
+}
+
+@media screen and (min-width: 1440px){
+  .daily{
+    padding: 80px calc((100% - 1232px)/2) 66px;
+  }
+}
