@@ -12,12 +12,4 @@ export const SWIPER_CONFIG = {
   slidesPerView: 'auto',
   centeredSlides: true,
   grabCursor: true,
-  // slidesPerView: 4,
-  // spaceBetween: 30,
-  // direction: 'horizontal',
-  // centeredSlides: true,
-  // pagination: {
-  //   el: '.swiper-pagination',
-  //   clickable: true,
-  // },
 }
