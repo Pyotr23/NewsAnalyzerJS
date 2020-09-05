@@ -1,7 +1,7 @@
 .header-main__link-item_color_white {
     color: white;
     border-bottom: 2px solid white;
-    box-shadow: 0 1px 1px -1px white;
+    box-shadow: 0 1px 0 -1px white;
     margin-top: 2px;
 }
 
