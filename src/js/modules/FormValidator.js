@@ -4,13 +4,20 @@ export default class FormValidator{
   #form;
   #submitButton;
   #errorMessages;
+  #elements;
 
   constructor(form){
     this.#form = form;
-    this.#form.addEventListener('input', (event) => this.#handleInput(event))
-    this.#form.addEventListener('submit', (event) => this.#handleInput(event))
+    [...this.#elements] = this.#getNotSubmitInputs();
+    this.#form.addEventListener('input', (event) => this.#handleInput(event));
     this.#submitButton = this.#form.querySelector('[type="submit"]');
     this.#errorMessages = VALIDATION_ERROR_MESSAGES;
+    this.#setSubmitButtonState();
+  }
+
+  #getNotSubmitInputs = () => {
+    const [...inputs] = this.#form.elements;
+    return inputs.filter(input => input.type !== 'submit');
   }
 
   #setSubmitButtonState = () => {
@@ -21,8 +28,7 @@ export default class FormValidator{
   }
 
   #checkInputsValidity = () => {
-    const [...inputs] = this.#form.elements;
-    return inputs.every(this.#isValidate);
+    return this.#elements.every(this.#isValidate);
   }
 
   #isValidate = (input) => {
@@ -35,7 +41,6 @@ export default class FormValidator{
   }
 
   #handleInput = (event) => {
-    debugger;
     this.#setErrorContent(event.target);
     this.#setSubmitButtonState();
   }

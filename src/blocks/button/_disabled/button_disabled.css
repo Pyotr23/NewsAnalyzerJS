@@ -1,9 +1,0 @@
-.button.button_disabled {
-  opacity: .5;
-  cursor: auto;
-}
-
-.button.button_disabled:hover {
-  opacity: .5;
-  cursor: auto;
-}

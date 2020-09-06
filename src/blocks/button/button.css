@@ -1,7 +1,6 @@
 @import url(./_place/_cards/button_place_cards.css);
 @import url(./_place/_commits/button_place_commits.css);
 @import url(./_active/_blue/button_active_blue.css);
-@import url(./_disabled/button_disabled.css);
 
 .button {
   font-family: 'Roboto', Helvetica, sans-serif;
@@ -26,6 +25,11 @@
 
 .button:hover {
   opacity: .9;
+}
+
+.button:disabled {
+  opacity: 1;
+  cursor: not-allowed;
 }
 
 @media screen and (min-width: 766px){
