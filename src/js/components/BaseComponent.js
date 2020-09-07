@@ -1,27 +1,15 @@
 export default class BaseComponent {
-  constructor(element, callbacks){
+  constructor(element, callbacks, hideModificator){
     this._element = element;
     this._callbacks = callbacks;
+    this._hideModificator = hideModificator;
   }
-  // constructor(callbacks = {}, template, modificator){
-  //   super(callbacks);
-  //   this.#element = element;
-  //   this._setHandlers()
-  // }
 
-  // setHideModificator(value){
-  //   this.#hideModificator = value;
-  // }
+  show = () => {
+    this._element.classList.remove(this._hideModificator);
+  };
 
-  // _setHandlers = (...args) => {
-  //   this.#element.addEventListener(...args);
-  // }
-
-  // show = () => {
-  //   this.#element.classList.remove(this.#hideModificator);
-  // };
-
-  // hide = () => {
-  //   this.#element.classList.add(this.#hideModificator);
-  // }
+  hide = () => {
+    this._element.classList.add(this._hideModificator);
+  }
 }
