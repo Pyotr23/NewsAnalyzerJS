@@ -4,6 +4,12 @@ import NewsApi from '../../js/modules/api/NewsApi';
 import Form from '../../blocks/form/Form';
 import Cards from '../../blocks/cards/Cards';
 import Card from '../../blocks/card/Card';
+import DataStorage from '../../js/modules/DataStorage';
+import { QUESTION, TOTAL_RESULTS, ARTICLES, DISPLAYED_COUNT } from '../../js/constants/dataStorage';
+import { getDisplayedCount } from '../../js/utils/countHelper';
+import Button from '../../blocks/button/Button';
+import NoResult from '../../blocks/no-result/NoResult';
+import Loading from '../../blocks/loading/Loading';
 
 const searchForm = document.querySelector('.form');
 const cardsNode = document.querySelector('.cards');
@@ -11,38 +17,68 @@ const cardTemplate = document
   .getElementById('card-template')
   .content
   .querySelector('.card');
-const cards = new Cards(cardsNode, {}, 'cards_hide');
+const cardsButtonNode = document.querySelector('.button_place_cards');
+const noResultNode = document.querySelector('.no-result');
+const loadingNode = document.querySelector('.loading');
+
+const cards = new Cards(cardsNode, { showMoreNews });
+cards.setHideModifitator('cards_hide');
+
 const validator = new FormValidator(searchForm);
 const newsApi = new NewsApi();
-
+const dataStorage = new DataStorage();
 const form = new Form(searchForm, { showNews });
-form.addSubmitHandler();
+const cardsButton = new Button(cardsButtonNode, { showMoreNews });
+
+const noResult = new NoResult(noResultNode);
+noResult.setHideModifitator('no-result_hide');
+
+const loading = new Loading(loadingNode);
+loading.setHideModifitator('loading_hide');
 
 async function showNews(event) {
   event.preventDefault();
+
+  noResult.hide();
+  cards.hide();
+  cards.clear();
+  loading.show();
+
+  const question = form.getQuestion();
   const res = await newsApi
-    .getNews(form.getQuestion());
+    .getNews(question);
+
+  loading.hide();
+  console.log(res.articles.length);
+  const { totalResults, articles } = res;
+  dataStorage.save(QUESTION, question);
+  dataStorage.save(TOTAL_RESULTS, totalResults);
+  dataStorage.save(ARTICLES, articles);
+  dataStorage.save(DISPLAYED_COUNT, getDisplayedCount(articles, 0));
+
+  if (articles.length === 0){
+    noResult.show();
+    return;
+  }
+
   const firstCards = res
     .articles
     .slice(0, 3)
     .map(ar => new Card(cardTemplate).create(ar));
+
   cards.render(firstCards);
   cards.show();
 }
 
-// <li class="card">
-//       <!-- <a class="ref ref_place_card" href="www.yandex.ru" target="_blank"> -->
-//       <a class="ref ref_place_card" target="_blank">
-//         <div class="card__container">
-//           <img class="card__image" src="<%=require('../../images/cards/womanyellingcat.jpg')%>" alt="заглавная картинка"/>
-//           <div class="card__text-content">
-//             <p class="card__text-date">2 августа, 2019</p>
-//             <h3 class="card__title">Национальное достояние - парки</h3>
-//             <p class="card__text">В 2016 году Америка отмечала важный юбилей:
-//               сто лет назад здесь начала складываться система национальных парков...</p>
-//           </div>
-//         </div>
-//         <p class="card__source">Медуза</p>
-//       </a>
-//     </li>
-
+function showMoreNews() {
+  console.log(dataStorage.load(DISPLAYED_COUNT));
+  const currentCount = dataStorage.load(DISPLAYED_COUNT);
+  const articles = dataStorage.load(ARTICLES);
+  const newCount = getDisplayedCount(articles, currentCount);
+  const newCards = articles
+    .slice(currentCount, newCount)
+    .map(ar => new Card(cardTemplate).create(ar));
+  cards.render(newCards);
+  dataStorage.save(DISPLAYED_COUNT, newCount);
+  console.log(dataStorage.load(DISPLAYED_COUNT));
+}

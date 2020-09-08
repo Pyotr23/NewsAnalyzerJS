@@ -6,4 +6,5 @@ export const SHOWED_NEWS_PACK_SIZE = 3;
 export const PUBLISHED_AT = 'publishedAt';
 export const REQUIRED_VALIDATE_INPUT_TEXT = 'Нужно ввести ключевое слово';
 export const BAD_NEWS_API_RESULT = 'Во время запроса произошла ошибка. ' +
-  'Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз.'
+  'Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз.';
+export const NEWS_LANGUAGE = 'ru';

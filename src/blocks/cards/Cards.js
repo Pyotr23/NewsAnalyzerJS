@@ -13,4 +13,8 @@ export default class Cards extends BaseComponent{
       this.#container.appendChild(card);
     });
   }
+
+  clear(){
+    this.#container.innerHTML = '';
+  }
 }

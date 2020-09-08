@@ -1,8 +1,11 @@
 export default class BaseComponent {
-  constructor(element, callbacks, hideModificator){
+  constructor(element, callbacks){
     this._element = element;
     this._callbacks = callbacks;
-    this._hideModificator = hideModificator;
+  }
+
+  setHideModifitator(cssClass){
+    this._hideModificator = cssClass;
   }
 
   show = () => {

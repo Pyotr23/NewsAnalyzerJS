@@ -1,4 +1,5 @@
 import TemplatedComponent from "../../js/components/TemplatedComponent";
+import { getDateWithStringMonth } from "../../js/utils/dateHelper";
 
 export default class Card extends TemplatedComponent{
   constructor(template){
@@ -21,7 +22,7 @@ export default class Card extends TemplatedComponent{
     };
 
     const dateNode = newCard.querySelector('.card__text-date');
-    dateNode.textContent = publishedAt;
+    dateNode.textContent = getDateWithStringMonth(publishedAt);
 
     const titleNode = newCard.querySelector('.card__title');
     titleNode.textContent = title;
