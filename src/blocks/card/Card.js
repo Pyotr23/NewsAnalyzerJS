@@ -1,16 +1,16 @@
-import TemplatedComponent from "../../js/components/TemplatedComponent";
+import BaseComponent from "../../js/components/BaseComponent";
 import { getDateWithStringMonth } from "../../js/utils/dateHelper";
 
-export default class Card extends TemplatedComponent{
-  constructor(template){
-    super(template);
+export default class Card extends BaseComponent{
+  constructor(...args){
+    super(...args);
   }
 
   create(dtoCard) {
     const { source, title, description, publishedAt, url, urlToImage } = dtoCard;
     const author = source.name;
 
-    const newCard = this._template.cloneNode(true);
+    const newCard = this._element.cloneNode(true);
 
     const linkNode = newCard.querySelector('.ref');
     linkNode.setAttribute('href', url);

@@ -10,6 +10,7 @@ import { getDisplayedCount } from '../../js/utils/countHelper';
 import Button from '../../blocks/button/Button';
 import NoResult from '../../blocks/no-result/NoResult';
 import Loading from '../../blocks/loading/Loading';
+import BadRequest from '../../blocks/bad-request/BadRequest';
 
 const searchForm = document.querySelector('.form');
 const cardsNode = document.querySelector('.cards');
@@ -20,6 +21,7 @@ const cardTemplate = document
 const cardsButtonNode = document.querySelector('.button_place_cards');
 const noResultNode = document.querySelector('.no-result');
 const loadingNode = document.querySelector('.loading');
+const badRequestNode = document.querySelector('.bad-request');
 
 const cards = new Cards(cardsNode, { showMoreNews });
 cards.setHideModifitator('cards_hide');
@@ -36,38 +38,47 @@ noResult.setHideModifitator('no-result_hide');
 const loading = new Loading(loadingNode);
 loading.setHideModifitator('loading_hide');
 
+const badRequest = new BadRequest(badRequestNode);
+badRequest.setHideModifitator('bad-request_hide');
+
 async function showNews(event) {
   event.preventDefault();
 
+  badRequest.hide();
   noResult.hide();
   cards.hide();
   cards.clear();
   loading.show();
 
   const question = form.getQuestion();
-  const res = await newsApi
-    .getNews(question);
+  await newsApi
+    .getNews(question)
+    .then(res => {
+      loading.hide();
+      console.log(res.articles.length);
+      const { totalResults, articles } = res;
+      dataStorage.save(QUESTION, question);
+      dataStorage.save(TOTAL_RESULTS, totalResults);
+      dataStorage.save(ARTICLES, articles);
+      dataStorage.save(DISPLAYED_COUNT, getDisplayedCount(articles, 0));
 
-  loading.hide();
-  console.log(res.articles.length);
-  const { totalResults, articles } = res;
-  dataStorage.save(QUESTION, question);
-  dataStorage.save(TOTAL_RESULTS, totalResults);
-  dataStorage.save(ARTICLES, articles);
-  dataStorage.save(DISPLAYED_COUNT, getDisplayedCount(articles, 0));
+      if (articles.length === 0){
+        noResult.show();
+        return;
+      }
 
-  if (articles.length === 0){
-    noResult.show();
-    return;
-  }
+      const firstCards = res
+        .articles
+        .slice(0, 3)
+        .map(ar => new Card(cardTemplate).create(ar));
 
-  const firstCards = res
-    .articles
-    .slice(0, 3)
-    .map(ar => new Card(cardTemplate).create(ar));
-
-  cards.render(firstCards);
-  cards.show();
+      cards.render(firstCards);
+      cards.show();
+    })
+    .catch(() => {
+      loading.hide();
+      badRequest.show();
+    });
 }
 
 function showMoreNews() {
