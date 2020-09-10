@@ -93,3 +93,20 @@ function showMoreNews() {
   dataStorage.save(DISPLAYED_COUNT, newCount);
   console.log(dataStorage.load(DISPLAYED_COUNT));
 }
+
+function init(){
+  const count = dataStorage.load(DISPLAYED_COUNT);
+  if (count && count === 0)
+    return;
+  const showedNews = dataStorage.load(ARTICLES).slice(0, count);
+  console.log(showedNews);
+  const showedCards = showedNews
+    .map(n => new Card(cardTemplate).create(n));
+  cards.render(showedCards);
+  cards.show();
+
+  const savedQuestion = dataStorage.load(QUESTION);
+  form.setQuestion(savedQuestion);
+}
+
+init();
