@@ -7,7 +7,7 @@ export default class TableRow extends BaseComponent {
 
   create(day, count, percent){
     const newRow = this._element.cloneNode(true);
-    console.log(newRow);
+
     const dayNode = newRow.querySelector('.table-row__first-column');
     dayNode.textContent = day;
 

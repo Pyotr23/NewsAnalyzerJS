@@ -4,8 +4,8 @@ import DataStorage from '../../js/modules/DataStorage';
 import { QUESTION, ARTICLES } from '../../js/constants/dataStorage';
 import { getCountInTitle } from '../../js/utils/calculator';
 import Daily from '../../blocks/daily/Daily';
-import Table from '../../blocks/table/Table';
 import TableRow from '../../blocks/table-row/TableRow';
+import Container from '../../js/components/Container';
 
 const digitsNode = document.querySelector('.digits');
 const dailyNode = document.querySelector('.daily');
@@ -18,7 +18,7 @@ const tableRowTemplate = document
 const digits = new Digits(digitsNode);
 const dataStorage = new DataStorage();
 const daily = new Daily(dailyNode);
-const table = new Table(tableNode);
+const table = new Container('.table__container', tableNode);
 
 function init(){
   const title = dataStorage.load(QUESTION);
