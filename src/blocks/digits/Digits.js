@@ -13,7 +13,7 @@ export default class Digits extends BaseComponent{
   }
 
   setData(title, count, countInTitle){
-    this.#titleNode.textContent = `Вы спросили «${title}»`;
+    this.#titleNode.textContent = `Вы спросили: «${title}»`;
     this.#countNode.textContent = count;
     this.#countInTitleNode.textContent = countInTitle;
   }

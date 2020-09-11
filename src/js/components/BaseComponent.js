@@ -9,7 +9,6 @@ export default class BaseComponent {
   }
 
   show = () => {
-    console.log(this._element);
     this._element.classList.remove(this._hideModificator);
   };
 
