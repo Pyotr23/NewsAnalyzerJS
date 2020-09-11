@@ -5,7 +5,7 @@ import Form from '../../blocks/form/Form';
 import Card from '../../blocks/card/Card';
 import DataStorage from '../../js/modules/DataStorage';
 import { QUESTION, TOTAL_RESULTS, ARTICLES, DISPLAYED_COUNT } from '../../js/constants/dataStorage';
-import { getDisplayedCount } from '../../js/utils/countHelper';
+import { getDisplayedCount } from '../../js/utils/calculator';
 import Button from '../../blocks/button/Button';
 import NoResult from '../../blocks/no-result/NoResult';
 import Loading from '../../blocks/loading/Loading';
@@ -62,19 +62,15 @@ function processGoodResponse (question, res) {
   loading.hide();
   console.log(res);
   const { articles } = res;
-
   if (articles.length === 0){
     noResult.show();
     return;
   }
-
   saveInStorage(question, res);
-
   const firstCards = res
     .articles
     .slice(0, SHOWED_NEWS_PACK_SIZE)
     .map(ar => new Card(cardTemplate).create(ar));
-
   cards.render(firstCards);
   cards.show();
 }
