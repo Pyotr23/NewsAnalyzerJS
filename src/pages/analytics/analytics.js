@@ -7,7 +7,7 @@ import Daily from '../../blocks/daily/Daily';
 import TableRow from '../../blocks/table-row/TableRow';
 import Container from '../../js/components/Container';
 import { RUSSIAN_DAY_OF_WEEK_NAMES } from '../../js/constants/dateTime';
-import { DAYS_AGO_COUNT } from '../../js/constants/api';
+import { DAYS_AGO_COUNT } from '../../js/constants/newsApi';
 
 const digitsNode = document.querySelector('.digits');
 const dailyNode = document.querySelector('.daily');

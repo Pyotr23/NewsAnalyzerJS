@@ -1,7 +1,6 @@
 export default class BaseComponent {
-  constructor(element, callbacks){
+  constructor(element){
     this._element = element;
-    this._callbacks = callbacks;
   }
 
   setHideModifitator(cssClass){

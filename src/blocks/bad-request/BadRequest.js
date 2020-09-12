@@ -1,5 +1,5 @@
 import BaseComponent from "../../js/components/BaseComponent";
-import { BAD_NEWS_API_RESULT } from "../../js/constants/api";
+import { BAD_NEWS_API_RESULT } from "../../js/constants/newsApi";
 
 export default class BadRequest extends BaseComponent{
   constructor(...args){

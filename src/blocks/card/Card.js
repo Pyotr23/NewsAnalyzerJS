@@ -6,8 +6,7 @@ export default class Card extends BaseComponent{
     super(...args);
   }
 
-  create(dtoCard) {
-    const { source, title, description, publishedAt, url, urlToImage } = dtoCard;
+  create({ source, title, description, publishedAt, url, urlToImage }) {
     const author = source.name;
 
     const newCard = this._element.cloneNode(true);

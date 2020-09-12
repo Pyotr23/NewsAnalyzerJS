@@ -1,4 +1,4 @@
-import { DAYS_AGO_COUNT } from "../constants/api";
+import { DAYS_AGO_COUNT } from "../constants/newsApi";
 import { QUESTION_RUSSIAN_MONTH_NAMES, RUSSIAN_MONTH_NAMES } from "../constants/dateTime";
 
 export const getDaysAgoString = () => {

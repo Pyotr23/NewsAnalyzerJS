@@ -10,7 +10,7 @@ import Button from '../../blocks/button/Button';
 import NoResult from '../../blocks/no-result/NoResult';
 import Loading from '../../blocks/loading/Loading';
 import BadRequest from '../../blocks/bad-request/BadRequest';
-import { SHOWED_NEWS_PACK_SIZE } from '../../js/constants/api';
+import { SHOWED_NEWS_PACK_SIZE } from '../../js/constants/news';
 import Container from '../../js/components/Container';
 
 const searchForm = document.querySelector('.form');
@@ -28,7 +28,8 @@ const validator = new FormValidator(searchForm);
 const newsApi = new NewsApi();
 const dataStorage = new DataStorage();
 const form = new Form(searchForm, { showNews });
-const cardsButton = new Button(cardsButtonNode, { showMoreNews });
+const cardsButton = new Button(cardsButtonNode);
+cardsButton.addClickHandler(showMoreNews);
 
 const cards = new Container('.cards__list', cardsNode, { showMoreNews });
 cards.setHideModifitator('cards_hide');

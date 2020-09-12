@@ -111,97 +111,12 @@
       <h2 class="title title_place_commits">
         История коммитов из&nbsp;GitHub
       </h2>
-      <a class="ref ref_place_commits" href="https://www.github.com">
+      <a class="ref ref_place_commits" href="https://www.github.com/Pyotr23/NewsAnalyzerJS">
         Открыть в Github &#62;
       </a>
     </div>
     <div class="swiper-container swiper__container">
       <div class="swiper-wrapper swiper__wrapper">
-        <a href="https://www.github.com" class="ref ref_place_commit-card swiper-slide swiper__slide">
-          <div class="commit-card">
-            <p class="commit-card__date">
-              14 августа, 2019
-            </p>
-            <div class="committer">
-              <img class="committer__avatar" src="<%=require('../../images/committer/committer-photo.jpg')%>" alt="фото" />
-              <div>
-                <h4 class="committer__name">Антон Дмитриев</h4>
-                <p class="committer__mail">anton@yandex.ru</p>
-              </div>
-            </div>
-            <p class="commit-card__message">
-              Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.
-            </p>
-          </div>
-        </a>
-        <a href="https://www.github.com" class="ref ref_place_commit-card swiper-slide swiper__slide">
-          <div class="commit-card">
-            <p class="commit-card__date">
-              14 августа, 2019
-            </p>
-            <div class="committer">
-              <img class="committer__avatar" src="<%=require('../../images/committer/committer-photo.jpg')%>" alt="фото" />
-              <div>
-                <h4 class="committer__name">Антон Дмитриев</h4>
-                <p class="committer__mail">anton@yandex.ru</p>
-              </div>
-            </div>
-            <p class="commit-card__message">
-              Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.
-            </p>
-          </div>
-        </a>
-        <a href="https://www.github.com" class="ref ref_place_commit-card swiper-slide swiper__slide">
-          <div class="commit-card">
-            <p class="commit-card__date">
-              14 августа, 2019
-            </p>
-            <div class="committer">
-              <img class="committer__avatar" src="<%=require('../../images/committer/committer-photo.jpg')%>" alt="фото" />
-              <div>
-                <h4 class="committer__name">Антон Дмитриев</h4>
-                <p class="committer__mail">anton@yandex.ru</p>
-              </div>
-            </div>
-            <p class="commit-card__message">
-              Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.
-            </p>
-          </div>
-        </a>
-        <a href="https://www.github.com" class="ref ref_place_commit-card swiper-slide swiper__slide">
-          <div class="commit-card">
-            <p class="commit-card__date">
-              14 августа, 2019
-            </p>
-            <div class="committer">
-              <img class="committer__avatar" src="<%=require('../../images/committer/committer-photo.jpg')%>" alt="фото" />
-              <div>
-                <h4 class="committer__name">Антон Дмитриев</h4>
-                <p class="committer__mail">anton@yandex.ru</p>
-              </div>
-            </div>
-            <p class="commit-card__message">
-              Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.
-            </p>
-          </div>
-        </a>
-        <a href="https://www.github.com" class="ref ref_place_commit-card swiper-slide swiper__slide">
-          <div class="commit-card">
-            <p class="commit-card__date">
-              14 августа, 2019
-            </p>
-            <div class="committer">
-              <img class="committer__avatar" src="<%=require('../../images/committer/committer-photo.jpg')%>" alt="фото" />
-              <div>
-                <h4 class="committer__name">Антон Дмитриев</h4>
-                <p class="committer__mail">anton@yandex.ru</p>
-              </div>
-            </div>
-            <p class="commit-card__message">
-              Emmet (formerly Zen Coding) is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.
-            </p>
-          </div>
-        </a>
       </div>
       <div class="swiper__pagination"></div>
     </div>
@@ -241,5 +156,21 @@
       </li>
     </ul>
   </footer>
+  <template id="commit-template">
+    <a class="ref ref_place_commit-card swiper-slide swiper__slide">
+      <div class="commit-card">
+        <p class="commit-card__date"></p>
+        <div class="committer">
+          <img class="committer__avatar" alt="фото" />
+          <div>
+            <h4 class="committer__name"></h4>
+            <p class="committer__mail"></p>
+          </div>
+        </div>
+        <p class="commit-card__message"></p>
+      </div>
+    </div>
+    </a>
+  </template>
 </body>
 </html>

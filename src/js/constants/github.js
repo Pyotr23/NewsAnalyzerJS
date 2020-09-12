@@ -1,0 +1,1 @@
+export const SHOWED_COMMITS_PACK_SIZE = 20;

@@ -1,5 +1,5 @@
 import Api from "./Api";
-import { NEWS_API_URL, NEWS_API_KEY, PAGE_SIZE, PUBLISHED_AT, NEWS_LANGUAGE } from "../../constants/api";
+import { NEWS_API_URL, NEWS_API_KEY, PAGE_SIZE, PUBLISHED_AT, NEWS_LANGUAGE } from "../../constants/newsApi";
 import { getDaysAgoString } from "../../utils/dateHelper";
 
 export default class NewsApi extends Api{
