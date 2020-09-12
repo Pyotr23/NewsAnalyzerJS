@@ -9,7 +9,10 @@ import { REPO_URL } from '../../js/constants/githubApi';
 import Button from '../../blocks/button/Button';
 
 const commitsNode = document.querySelector('.commits');
-const commitCardNode = document.getElementById('commit-template').content.querySelector('.swiper-slide');
+const commitCardNode = document
+  .querySelector('#commit-template')
+  .content
+  .querySelector('.swiper-slide');
 const githubbButtonNode = document.querySelector('.button_place_commits');
 
 const githubApi = new GithubApi();

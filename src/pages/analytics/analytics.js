@@ -13,7 +13,7 @@ const digitsNode = document.querySelector('.digits');
 const dailyNode = document.querySelector('.daily');
 const tableNode = document.querySelector('.table');
 const tableRowTemplate = document
-  .getElementById('table-row-template')
+  .querySelector('#table-row-template')
   .content
   .querySelector('.table-row');
 

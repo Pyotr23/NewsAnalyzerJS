@@ -16,7 +16,7 @@ import Container from '../../js/components/Container';
 const searchForm = document.querySelector('.form');
 const cardsNode = document.querySelector('.cards');
 const cardTemplate = document
-  .getElementById('card-template')
+  .querySelector('#card-template')
   .content
   .querySelector('.card');
 const cardsButtonNode = document.querySelector('.button_place_cards');
@@ -30,6 +30,8 @@ const form = new Form(searchForm);
 form.addSubmitHandler(showNews);
 const cardsButton = new Button(cardsButtonNode);
 cardsButton.addClickHandler(showMoreNews);
+cardsButton.setHideModifitator();
+cardsButton.setHideModifitator('button_hide');
 
 const cardList = new Container('.cards__list', cardsNode, { showMoreNews });
 cardList.setHideModifitator('cards_hide');
@@ -52,12 +54,12 @@ function prepareDomBeforeResponse() {
   form.disableForm();
 }
 
-function saveInStorage(question, res) {
+function saveInStorage(question, res, count) {
   const { totalResults, articles } = res;
   dataStorage.save(QUESTION, question);
   dataStorage.save(TOTAL_RESULTS, totalResults);
   dataStorage.save(ARTICLES, articles);
-  dataStorage.save(DISPLAYED_COUNT, getDisplayedCount(articles, 0));
+  dataStorage.save(DISPLAYED_COUNT, count);
 }
 
 function processGoodResponse (question, res) {
@@ -68,7 +70,15 @@ function processGoodResponse (question, res) {
     noResult.show();
     return;
   }
-  saveInStorage(question, res);
+  console.log(articles.length);
+  const displayedCount = getDisplayedCount(articles, 0);
+  saveInStorage(question, res, displayedCount);
+  console.log(displayedCount);
+  if (displayedCount === articles.length)
+    cardsButton.hide();
+  else
+    cardsButton.show();
+
   const firstCards = res
     .articles
     .slice(0, SHOWED_NEWS_PACK_SIZE)
