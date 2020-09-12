@@ -24,15 +24,15 @@ const noResultNode = document.querySelector('.no-result');
 const loadingNode = document.querySelector('.loading');
 const badRequestNode = document.querySelector('.bad-request');
 
-const validator = new FormValidator(searchForm);
 const newsApi = new NewsApi();
 const dataStorage = new DataStorage();
-const form = new Form(searchForm, { showNews });
+const form = new Form(searchForm);
+form.addSubmitHandler(showNews);
 const cardsButton = new Button(cardsButtonNode);
 cardsButton.addClickHandler(showMoreNews);
 
-const cards = new Container('.cards__list', cardsNode, { showMoreNews });
-cards.setHideModifitator('cards_hide');
+const cardList = new Container('.cards__list', cardsNode, { showMoreNews });
+cardList.setHideModifitator('cards_hide');
 
 const noResult = new NoResult(noResultNode);
 noResult.setHideModifitator('no-result_hide');
@@ -46,9 +46,10 @@ badRequest.setHideModifitator('bad-request_hide');
 function prepareDomBeforeResponse() {
   badRequest.hide();
   noResult.hide();
-  cards.hide();
-  cards.clear();
+  cardList.hide();
+  cardList.clear();
   loading.show();
+  form.disableForm();
 }
 
 function saveInStorage(question, res) {
@@ -61,7 +62,7 @@ function saveInStorage(question, res) {
 
 function processGoodResponse (question, res) {
   loading.hide();
-  console.log(res);
+  form.enableForm();
   const { articles } = res;
   if (articles.length === 0){
     noResult.show();
@@ -72,8 +73,8 @@ function processGoodResponse (question, res) {
     .articles
     .slice(0, SHOWED_NEWS_PACK_SIZE)
     .map(ar => new Card(cardTemplate).create(ar));
-  cards.render(firstCards);
-  cards.show();
+  cardList.render(firstCards);
+  cardList.show();
 }
 
 async function showNews(event) {
@@ -96,7 +97,7 @@ function showMoreNews() {
   const newCards = articles
     .slice(currentCount, newCount)
     .map(ar => new Card(cardTemplate).create(ar));
-  cards.render(newCards);
+  cardList.render(newCards);
   dataStorage.save(DISPLAYED_COUNT, newCount);
 }
 
@@ -105,11 +106,12 @@ function init(){
   const showedNews = dataStorage.load(ARTICLES).slice(0, count);
   const showedCards = showedNews
     .map(n => new Card(cardTemplate).create(n));
-  cards.render(showedCards);
-  cards.show();
+  cardList.render(showedCards);
+  cardList.show();
 
   const savedQuestion = dataStorage.load(QUESTION);
   form.setQuestion(savedQuestion);
+  const validator = new FormValidator(searchForm);
 }
 
 init();

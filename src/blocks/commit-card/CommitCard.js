@@ -1,5 +1,4 @@
 import BaseComponent from "../../js/components/BaseComponent";
-import { REPO_URL } from "../../js/constants/githubApi";
 import { getDateWithStringMonth } from "../../js/utils/dateHelper";
 
 export default class CommitCard extends BaseComponent{
@@ -13,9 +12,6 @@ export default class CommitCard extends BaseComponent{
     const { avatar_url } = author;
 
     const newCommitCard = this._element.cloneNode(true);
-
-    // Const refNode = newCommitCard.querySelector('.ref');
-    // refNode.setAttribute('href', REPO_URL);
 
     const dateNode = newCommitCard.querySelector('.commit-card__date');
     dateNode.textContent = getDateWithStringMonth(date);

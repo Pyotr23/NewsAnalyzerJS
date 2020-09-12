@@ -23,7 +23,7 @@ function initSwiper() {
   new Swiper('.swiper__container', SWIPER_CONFIG);
 }
 
-function showRepo(event) {
+function showRepo() {
   window.open(REPO_URL);
 }
 
@@ -32,9 +32,11 @@ function init(){
     .getCommits()
     .then(dtoCommits => {
       const commits = dtoCommits.slice(0, SHOWED_COMMITS_PACK_SIZE);
-      commitsContainer.render(commits.map(commit => new CommitCard(commitCardNode).create(commit)));
+      const commitCards = commits.map(commit => new CommitCard(commitCardNode).create(commit))
+      commitsContainer.render(commitCards);
       initSwiper();
-    });
+    })
+    .catch(error => alert(error));;
 }
 
 init();

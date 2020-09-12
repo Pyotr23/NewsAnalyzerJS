@@ -5,7 +5,6 @@ export default class Form extends BaseComponent{
 
   constructor(...args){
     super(...args);
-    this.#addSubmitHandler();
     this.#searchInput = this._element.querySelector('.form__input');
   }
 
@@ -17,7 +16,15 @@ export default class Form extends BaseComponent{
     this.#searchInput.value = question;
   }
 
-  #addSubmitHandler = () => {
-    this._element.addEventListener('submit', this._callbacks.showNews);
+  addSubmitHandler = (callback) => {
+    this._element.addEventListener('submit', callback);
   }
+
+  disableForm = () => {
+    this._element.style.pointerEvents = 'none';
+  };
+
+  enableForm = () => {
+    this._element.style.pointerEvents = 'initial';
+  };
 }

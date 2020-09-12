@@ -35,6 +35,7 @@ export default class FormValidator{
     input.setCustomValidity("");
     if (input.validity.valueMissing) {
       input.setCustomValidity(this.#errorMessages.valueMissing);
+      console.log(false);
       return false;
     }
     return input.checkValidity();
