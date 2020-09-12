@@ -12,6 +12,8 @@ export default class BaseComponent {
   };
 
   hide = () => {
-    this._element.classList.add(this._hideModificator);
+    const [...classList] = this._element.classList;
+    if (!classList.includes(this._hideModificator))
+      this._element.classList.add(this._hideModificator);
   }
 }

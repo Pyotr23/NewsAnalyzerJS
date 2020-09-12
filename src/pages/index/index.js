@@ -70,10 +70,9 @@ function processGoodResponse (question, res) {
     noResult.show();
     return;
   }
-  console.log(articles.length);
   const displayedCount = getDisplayedCount(articles, 0);
   saveInStorage(question, res, displayedCount);
-  console.log(displayedCount);
+
   if (displayedCount === articles.length)
     cardsButton.hide();
   else
@@ -113,10 +112,17 @@ function showMoreNews() {
 
 function init(){
   const count = dataStorage.load(DISPLAYED_COUNT);
-  const showedNews = dataStorage.load(ARTICLES).slice(0, count);
+  const news = dataStorage.load(ARTICLES);
+  const showedNews = news.slice(0, count);
   const showedCards = showedNews
     .map(n => new Card(cardTemplate).create(n));
   cardList.render(showedCards);
+
+  if (count === news.length)
+    cardsButton.hide();
+  else
+    cardsButton.show();
+
   cardList.show();
 
   const savedQuestion = dataStorage.load(QUESTION);
