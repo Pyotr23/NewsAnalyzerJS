@@ -16,6 +16,10 @@
   border: 3px solid #2F71E5;
 }
 
+/* .form__input:invalid {
+  background-color: pink;
+} */
+
 @media screen and (min-width: 766px){
   .form__input {
     padding-right: calc(160px + 16px);  /* Длина кнопки "Искать" + внутренний отступ */

@@ -1,5 +1,6 @@
 @import url(./__text/no-result__text.css);
 @import url(./__image/no-result__image.css);
+@import url(./_hide/no-result_hide.css);
 
 .no-result {
   background: #F5F6F7;

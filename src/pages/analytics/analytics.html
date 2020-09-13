@@ -36,10 +36,10 @@
       Вы спросили «Путешествия»
     </h2>
     <p class="digits__description">
-      Новостей за неделю: <b>34 324</b>
+      Новостей за неделю: <b class="digits__count">34 324</b>
     </p>
     <p class="digits__description">
-      Упоминаний в заголовках: <b>235</b>
+      Упоминаний в заголовках: <b class="digits__title-count">235</b>
     </p>
   </section>
   <section class="daily">
@@ -48,7 +48,7 @@
     </h2>
     <div class="table">
       <div class="table-row">
-        <p class="table-row__first-column table-row__header">Дата (август)</p>
+        <p class="table-row__first-column table-row__header" id="month">Дата (август)</p>
         <p class="table-row__second-column table-row__header">Кол-во упоминаний</p>
       </div>
       <div class="table__line"></div>
@@ -62,7 +62,19 @@
           <p class="table-row__digit">100</p>
         </div>
       </div>
-      <div class="table-row table-row_margin-bottom">
+      <template id="table-row-template">
+        <div class="table-row table-row_margin-bottom">
+          <p class="table-row__first-column">19, пн</p>
+          <div class="table-row__second-column">
+            <span id="count">15</span>
+            <div class="table-row__shifter" style="width: 85%"></div>
+          </div>
+        </div>
+      </template>
+      <div class="table__container">
+
+      </div>
+      <!-- <div class="table-row table-row_margin-bottom">
         <p class="table-row__first-column">19, пн</p>
         <div class="table-row__second-column">
           15
@@ -110,7 +122,7 @@
           34
           <div class="table-row__shifter" style="width: 66%"></div>
         </div>
-      </div>
+      </div> -->
       <div class="table-row">
         <p class="table-row__first-column"></p>
         <div class="table-row__second-column table-row__header table-row__digits">

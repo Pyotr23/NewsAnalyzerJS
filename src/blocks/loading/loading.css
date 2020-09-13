@@ -1,6 +1,6 @@
 @import url(./__spinner/loading__spinner.css);
 @import url(./__text/loading__text.css);
-@import url(./_visible/loading_visible.css);
+@import url(./_hide/loading_hide.css);
 
 .loading {
   background: #F5F6F7;
