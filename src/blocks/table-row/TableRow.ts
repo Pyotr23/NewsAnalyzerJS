@@ -1,13 +1,14 @@
 import BaseComponent from "../../ts/components/BaseComponent";
+import ITemplateElement from "../../ts/interfaces/ITemplateElement";
+import { DayCountRow } from "../../ts/types";
 
-export default class TableRow extends BaseComponent {
-  constructor(...args){
-    super(...args);
+export default class TableRow extends BaseComponent implements ITemplateElement {
+  constructor(element: HTMLElement){
+    super(element);
   }
 
-  create(rowData){
-    const { day, count, percent } = rowData;
-    const newRow = this._element.cloneNode(true);
+  create({ day, count, percent }: DayCountRow){
+    const newRow = <HTMLElement>this.getElement().cloneNode(true);
 
     const dayNode = newRow.querySelector('.table-row__first-column');
     dayNode.textContent = day;
@@ -16,14 +17,14 @@ export default class TableRow extends BaseComponent {
     percentNode.setAttribute('style', `width: ${percent}%`);
 
     const countNode = newRow.querySelector('#count');
-    countNode.textContent = count;
+    countNode.textContent = count.toString();
 
-    this._element = newRow;
+    this.setElement(newRow);
     return newRow;
   }
 
   setLastRowModificator(){
-    this._element.classList.add('table-row_margin-bottom_last');
-    this._element.classList.remove('table-row_margin-bottom');
+    this.getElement().classList.add('table-row_margin-bottom_last');
+    this.getElement().classList.remove('table-row_margin-bottom');
   }
 }

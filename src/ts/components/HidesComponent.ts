@@ -4,12 +4,9 @@ import IHide from "../interfaces/IHide";
 export default class HidesComponent extends BaseComponent implements IHide{
   private _hideSelector: string;
 
-  constructor(element: HTMLElement){
+  constructor(element: HTMLElement, hideSelector: string){
     super(element);
-  }
-
-  setHideSelector(selector: string): void {
-    this._hideSelector = selector;
+    this._hideSelector = hideSelector;
   }
 
   show(): void {

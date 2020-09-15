@@ -33,3 +33,9 @@ type Committer = {
   email: string,
   date: Date
 }
+
+export type DayCountRow = {
+  day: string,
+  count: number,
+  percent: number
+}

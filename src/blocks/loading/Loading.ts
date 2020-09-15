@@ -1,7 +1,7 @@
-import BaseComponent from "../../ts/components/BaseComponent";
+import HidesComponent from "../../ts/components/HidesComponent";
 
-export default class Loading extends BaseComponent {
-  constructor(...args){
-    super(...args);
+export default class Loading extends HidesComponent {
+  constructor(element: HTMLElement, hideSelector: string){
+    super(element, hideSelector);
   }
 }

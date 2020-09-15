@@ -6,4 +6,8 @@ export default class BaseComponent {
   }
 
   getElement = () => this._element;
+
+  setElement = (value: HTMLElement): void => {
+    this._element = value
+  }
 }
