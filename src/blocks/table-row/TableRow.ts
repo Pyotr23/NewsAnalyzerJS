@@ -1,4 +1,4 @@
-import BaseComponent from "../../js/components/BaseComponent";
+import BaseComponent from "../../ts/components/BaseComponent";
 
 export default class TableRow extends BaseComponent {
   constructor(...args){

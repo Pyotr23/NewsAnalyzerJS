@@ -1,17 +1,19 @@
-import BaseComponent from "../../js/components/BaseComponent";
-import { getDateWithStringMonth } from "../../js/utils/dateHelper";
+import BaseComponent from "../../ts/components/BaseComponent";
+import { getDateWithStringMonth } from "../../ts/utils/dateHelper";
+import ITemplateElement from "../../ts/interfaces/ITemplateElement";
+import { DetailedCommit } from "../../ts/types";
 
-export default class CommitCard extends BaseComponent{
-  constructor(...args){
-    super(...args);
+export default class CommitCard extends BaseComponent implements ITemplateElement{
+  constructor(template: HTMLElement){
+    super(template);
   }
 
-  create({ commit, author }){
+  create({ commit, author }: DetailedCommit){
     const { committer, message } = commit;
     const { name, email, date } = committer;
     const { avatar_url } = author;
 
-    const newCommitCard = this._element.cloneNode(true);
+    const newCommitCard = <HTMLElement>this.getElement().cloneNode(true);
 
     const dateNode = newCommitCard.querySelector('.commit-card__date');
     dateNode.textContent = getDateWithStringMonth(date);

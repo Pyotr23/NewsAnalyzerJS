@@ -1,13 +1,13 @@
 import './analytics.css';
 import Digits from '../../blocks/digits/Digits';
-import DataStorage from '../../js/modules/DataStorage';
-import { QUESTION, ARTICLES } from '../../js/constants/dataStorage';
-import { getCountInTitle, getMatchesInArticle } from '../../js/utils/calculator';
+import DataStorage from '../../ts/modules/DataStorage';
+import { QUESTION, ARTICLES } from '../../ts/constants/dataStorage';
+import { getCountInTitle, getMatchesInArticle } from '../../ts/utils/calculator';
 import Daily from '../../blocks/daily/Daily';
 import TableRow from '../../blocks/table-row/TableRow';
-import Container from '../../js/components/Container';
-import { RUSSIAN_DAY_OF_WEEK_NAMES } from '../../js/constants/dateTime';
-import { DAYS_AGO_COUNT } from '../../js/constants/newsApi';
+import Container from '../../ts/components/Container';
+import { RUSSIAN_DAY_OF_WEEK_NAMES } from '../../ts/constants/dateTime';
+import { DAYS_AGO_COUNT } from '../../ts/constants/newsApi';
 
 const digitsNode = document.querySelector('.digits');
 const dailyNode = document.querySelector('.daily');

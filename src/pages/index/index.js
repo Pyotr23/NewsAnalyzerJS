@@ -1,17 +1,17 @@
 import './index.css';
-import FormValidator from '../../js/modules/FormValidator';
-import NewsApi from '../../js/modules/api/NewsApi';
+import FormValidator from '../../ts/modules/FormValidator';
+import NewsApi from '../../ts/modules/api/NewsApi';
 import Form from '../../blocks/form/Form';
 import Card from '../../blocks/card/Card';
-import DataStorage from '../../js/modules/DataStorage';
-import { QUESTION, TOTAL_RESULTS, ARTICLES, DISPLAYED_COUNT } from '../../js/constants/dataStorage';
-import { getDisplayedCount } from '../../js/utils/calculator';
+import DataStorage from '../../ts/modules/DataStorage';
+import { QUESTION, TOTAL_RESULTS, ARTICLES, DISPLAYED_COUNT } from '../../ts/constants/dataStorage';
+import { getDisplayedCount } from '../../ts/utils/calculator';
 import Button from '../../blocks/button/Button';
 import NoResult from '../../blocks/no-result/NoResult';
 import Loading from '../../blocks/loading/Loading';
 import BadRequest from '../../blocks/bad-request/BadRequest';
-import { SHOWED_NEWS_PACK_SIZE } from '../../js/constants/news';
-import Container from '../../js/components/Container';
+import { SHOWED_NEWS_PACK_SIZE } from '../../ts/constants/news';
+import Container from '../../ts/components/Container';
 
 const searchForm = document.querySelector('.form');
 const cardsNode = document.querySelector('.cards');

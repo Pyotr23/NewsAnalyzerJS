@@ -1,11 +1,11 @@
 import './about.css';
 import Swiper, { Navigation, Pagination } from 'swiper';
-import { SWIPER_CONFIG } from '../../js/constants/swiperConfig';
-import GithubApi from '../../js/modules/api/GithubApi';
-import Container from '../../js/components/Container';
+import { SWIPER_CONFIG } from '../../ts/constants/swiperConfig';
+import GithubApi from '../../ts/modules/api/GithubApi';
+import Container from '../../ts/components/Container';
 import CommitCard from '../../blocks/commit-card/CommitCard';
-import { SHOWED_COMMITS_PACK_SIZE } from '../../js/constants/github';
-import { REPO_URL } from '../../js/constants/githubApi';
+import { SHOWED_COMMITS_PACK_SIZE } from '../../ts/constants/github';
+import { REPO_URL } from '../../ts/constants/githubApi';
 import Button from '../../blocks/button/Button';
 
 const commitsNode = document.querySelector('.commits');

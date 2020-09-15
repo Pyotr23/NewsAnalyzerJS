@@ -1,22 +1,24 @@
-import BaseComponent from "../../js/components/BaseComponent";
-import { getDateWithStringMonth } from "../../js/utils/dateHelper";
+import BaseComponent from "../../ts/components/BaseComponent";
+import { getDateWithStringMonth } from "../../ts/utils/dateHelper";
+import { Article } from "../../ts/types";
+import ITemplateElement from "../../ts/interfaces/ITemplateElement";
 
-export default class Card extends BaseComponent{
-  constructor(...args){
-    super(...args);
+export default class Card extends BaseComponent implements ITemplateElement{
+  constructor(template: HTMLElement){
+    super(template);
   }
 
-  create({ source, title, description, publishedAt, url, urlToImage }) {
+  create({ source, title, description, publishedAt, url, urlToImage }: Article) {
     const author = source.name;
 
-    const newCard = this._element.cloneNode(true);
+    const newCard = <HTMLElement>this.getElement().cloneNode(true);
 
     const linkNode = newCard.querySelector('.ref');
     linkNode.setAttribute('href', url);
 
-    const imageNode = newCard.querySelector('.card__image');
+    const imageNode = <HTMLElement>newCard.querySelector('.card__image');
     imageNode.setAttribute('src', urlToImage);
-    imageNode.onerror = () => {
+    imageNode.onerror = (): void => {
       imageNode.setAttribute('src', require('../../images/cards/womanyellingcat.jpg'));
     };
 
