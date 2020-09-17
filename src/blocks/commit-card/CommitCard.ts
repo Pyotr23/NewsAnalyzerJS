@@ -13,7 +13,7 @@ export default class CommitCard extends BaseComponent implements ITemplateElemen
     const { name, email, date } = committer;
     const { avatar_url } = author;
 
-    const newCommitCard = <HTMLElement>this.getElement().cloneNode(true);
+    const newCommitCard = <HTMLElement>this._element.cloneNode(true);
 
     const dateNode = newCommitCard.querySelector('.commit-card__date');
     dateNode.textContent = getDateWithStringMonth(date);

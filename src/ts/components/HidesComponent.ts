@@ -10,10 +10,10 @@ export default class HidesComponent extends BaseComponent implements IHide{
   }
 
   show(): void {
-    this.getElement().classList.remove(this._hideSelector);
+    this._element.classList.remove(this._hideSelector);
   }
 
   hide(): void {
-    this,this.getElement().classList.add(this._hideSelector);
+    this._element.classList.add(this._hideSelector);
   }
 }

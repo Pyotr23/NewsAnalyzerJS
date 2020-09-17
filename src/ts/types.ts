@@ -39,3 +39,9 @@ export type DayCountRow = {
   count: number,
   percent: number
 }
+
+export type NewsResponse = {
+  status: string,
+  totalResults: number,
+  articles: Article[]
+}

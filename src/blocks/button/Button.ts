@@ -7,6 +7,6 @@ export default class Button extends BaseComponent{
   }
 
   private setClickHandler = (callback: EventListener): void => {
-    this.getElement().addEventListener('click', callback);
+    this._element.addEventListener('click', callback);
   }
 }

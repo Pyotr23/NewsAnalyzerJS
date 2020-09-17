@@ -1,15 +1,18 @@
 import { SHOWED_NEWS_PACK_SIZE } from "../constants/news";
+import { Article } from "../types";
 
-export const getCountInTitle = (articles, word) => {
+export const getCountInTitle = (articles: Article[], word: string): number => {
   word = word.toLowerCase();
   const regex = new RegExp(`${word}`, 'is');
-  return articles.reduce((sum, curr) => {
+  return articles.reduce((sum, curr) =>
+  {
     const title = curr.title.toLowerCase();
     return sum + title.split(regex).length - 1;
-  }, 0);
+  },
+  0);
 }
 
-export const getMatchesInArticle = (article, word) => {
+export const getMatchesInArticle = (article: Article, word: string): number => {
   word = word.toLowerCase();
   const regex = new RegExp(`${word}`, 'is');
   let count = article.title
@@ -21,8 +24,8 @@ export const getMatchesInArticle = (article, word) => {
   return count;
 }
 
-export const getDisplayedCount = (array, count) => {
-  return array.length - SHOWED_NEWS_PACK_SIZE >= count
+export const getDisplayedCount = (arrayLength: number, count: number) => {
+  return arrayLength - SHOWED_NEWS_PACK_SIZE >= count
     ? count + SHOWED_NEWS_PACK_SIZE
-    : array.length
+    : arrayLength;
 }

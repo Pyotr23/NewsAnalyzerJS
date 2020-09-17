@@ -18,14 +18,14 @@ export default class Form extends BaseComponent{
   }
 
   private setSubmitHandler = (callback: EventListener) => {
-    this.getElement().addEventListener('submit', callback);
+    this._element.addEventListener('submit', callback);
   }
 
   disableForm = (): void => {
-    this.getElement().style.pointerEvents = 'none';
+    this._element.style.pointerEvents = 'none';
   };
 
   enableForm = (): void => {
-    this.getElement().style.pointerEvents = 'initial';
+    this._element.style.pointerEvents = 'initial';
   };
 }

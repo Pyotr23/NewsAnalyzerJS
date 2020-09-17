@@ -8,7 +8,7 @@ export default class BadRequest extends BaseComponent{
   }
 
   private addTitle = (): void => {
-    const title = this.getElement().querySelector('.title');
+    const title = this._element.querySelector('.title');
     title.textContent = BAD_NEWS_API_RESULT;
   }
 }

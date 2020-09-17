@@ -8,7 +8,7 @@ export default class TableRow extends BaseComponent implements ITemplateElement 
   }
 
   create({ day, count, percent }: DayCountRow){
-    const newRow = <HTMLElement>this.getElement().cloneNode(true);
+    const newRow = <HTMLElement>this._element.cloneNode(true);
 
     const dayNode = newRow.querySelector('.table-row__first-column');
     dayNode.textContent = day;
@@ -19,12 +19,12 @@ export default class TableRow extends BaseComponent implements ITemplateElement 
     const countNode = newRow.querySelector('#count');
     countNode.textContent = count.toString();
 
-    this.setElement(newRow);
+    this._element = newRow;
     return newRow;
   }
 
   setLastRowModificator(){
-    this.getElement().classList.add('table-row_margin-bottom_last');
-    this.getElement().classList.remove('table-row_margin-bottom');
+    this._element.classList.add('table-row_margin-bottom_last');
+    this._element.classList.remove('table-row_margin-bottom');
   }
 }

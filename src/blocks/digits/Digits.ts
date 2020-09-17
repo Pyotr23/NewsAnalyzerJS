@@ -7,9 +7,9 @@ export default class Digits extends BaseComponent{
 
   constructor(element: HTMLElement){
     super(element);
-    this._titleNode = this.getElement().querySelector('.title');
-    this._countNode = this.getElement().querySelector('.digits__count');
-    this._countInTitleNode = this.getElement().querySelector('.digits__title-count');
+    this._titleNode = this._element.querySelector('.title');
+    this._countNode = this._element.querySelector('.digits__count');
+    this._countInTitleNode = this._element.querySelector('.digits__title-count');
   }
 
   setData(title: string, count: number, countInTitle: number){
