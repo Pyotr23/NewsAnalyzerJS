@@ -1,9 +1,10 @@
 import BaseComponent from "../../ts/components/BaseComponent";
+import HidesComponent from "../../ts/components/HidesComponent";
 import { BAD_NEWS_API_RESULT } from "../../ts/constants/newsApi";
 
-export default class BadRequest extends BaseComponent{
-  constructor(element: HTMLElement){
-    super(element);
+export default class BadRequest extends HidesComponent{
+  constructor(element: HTMLElement, hideSelector: string){
+    super(element, hideSelector);
     this.addTitle();
   }
 

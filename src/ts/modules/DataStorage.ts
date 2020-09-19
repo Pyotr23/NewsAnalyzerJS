@@ -1,5 +1,5 @@
 export default class DataStorage{
-  save = (item: string, value: string): void => {
+  save = (item: string, value: any): void => {
     localStorage.setItem(item, JSON.stringify(value));
   }
 

@@ -8,17 +8,14 @@ import { SHOWED_COMMITS_PACK_SIZE } from '../../ts/constants/github';
 import { REPO_URL } from '../../ts/constants/githubApi';
 import Button from '../../blocks/button/Button';
 
-const commitsNode = document.querySelector('.commits');
-const commitCardNode = document
-  .querySelector('#commit-template')
-  .content
-  .querySelector('.swiper-slide');
-const githubbButtonNode = document.querySelector('.button_place_commits');
+const commitsNode = <HTMLElement>document.querySelector('.commits');
+const commitCardNode = <HTMLElement>document.querySelector('#commit-template').querySelector('.swiper-slide');
+const githubbButtonNode = <HTMLElement>document.querySelector('.button_place_commits');
+const commitContainer = <HTMLElement>commitsNode.querySelector('.swiper-wrapper');
 
 const githubApi = new GithubApi();
-const commitsContainer = new Container('.swiper-wrapper', commitsNode)
-const button = new Button(githubbButtonNode);
-button.addClickHandler(showRepo);
+const commitsContainer = new Container(commitContainer, commitsNode)
+const button = new Button(githubbButtonNode, showRepo);
 
 Swiper.use([Navigation, Pagination]);
 
@@ -26,11 +23,11 @@ function initSwiper() {
   new Swiper('.swiper__container', SWIPER_CONFIG);
 }
 
-function showRepo() {
+function showRepo(): void {
   window.open(REPO_URL);
 }
 
-function init(){
+function init(): void {
   githubApi
     .getCommits()
     .then(dtoCommits => {

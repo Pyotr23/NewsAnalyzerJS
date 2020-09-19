@@ -1,4 +1,6 @@
-export const SWIPER_CONFIG = {
+import { SwiperOptions } from "swiper";
+
+export const SWIPER_CONFIG: SwiperOptions = {
   pagination: {
     el: '.swiper__pagination',
     clickable: true,

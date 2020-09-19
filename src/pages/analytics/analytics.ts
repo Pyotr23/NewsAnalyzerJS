@@ -8,21 +8,20 @@ import TableRow from '../../blocks/table-row/TableRow';
 import Container from '../../ts/components/Container';
 import { RUSSIAN_DAY_OF_WEEK_NAMES } from '../../ts/constants/dateTime';
 import { DAYS_AGO_COUNT } from '../../ts/constants/newsApi';
+import { Article, DayCountRow } from '../../ts/types';
 
-const digitsNode = document.querySelector('.digits');
-const dailyNode = document.querySelector('.daily');
-const tableNode = document.querySelector('.table');
-const tableRowTemplate = document
-  .querySelector('#table-row-template')
-  .content
-  .querySelector('.table-row');
+const digitsNode = <HTMLElement>document.querySelector('.digits');
+const dailyNode = <HTMLElement>document.querySelector('.daily');
+const tableNode = <HTMLElement>document.querySelector('.table');
+const tableRowTemplate = <HTMLElement>document.querySelector('#table-row-template').querySelector('.table-row');
+const tableContainer = <HTMLElement>tableNode.querySelector('.table__container');
 
 const digits = new Digits(digitsNode);
 const dataStorage = new DataStorage();
 const daily = new Daily(dailyNode);
-const table = new Container('.table__container', tableNode);
+const table = new Container(tableContainer, tableNode);
 
-function init(){
+function init(): void {
   const title = dataStorage.load(QUESTION);
   const articles = dataStorage.load(ARTICLES);
   const countInTitle = getCountInTitle (articles, title);
@@ -39,8 +38,8 @@ function init(){
   } ));
 }
 
-function getRows() {
-  const rows = [];
+function getRows(): DayCountRow[] {
+  const rows = new Array<DayCountRow>();
   for (let i = DAYS_AGO_COUNT; i >= 0; i--){
     const dateTime = new Date();
     dateTime.setDate(dateTime.getDate() - i);
@@ -51,7 +50,7 @@ function getRows() {
   return rows;
 }
 
-function fillCount(articles, rows, word){
+function fillCount(articles: Article[], rows: DayCountRow[], word: string){
   for (let i = 0, j = rows.length - 1; i < articles.length; ){
     const article = articles[i];
     if (new Date(article.publishedAt).getDate() === rows[j].dayNumber){
@@ -63,12 +62,9 @@ function fillCount(articles, rows, word){
   }
 }
 
-function fillPercent(rows) {
+function fillPercent(rows: DayCountRow[]): void {
   const allMatchesCount = rows.reduce((sum, row) => sum + row.count, 0);
-  rows.forEach(row => {
-    const percent = 100 - 100 / allMatchesCount * row.count;
-    row.percent = percent.toFixed(1);
-  } );
+  rows.forEach(row => row.percent = 100 - 100 / allMatchesCount * row.count);
 }
 
 init();

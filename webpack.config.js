@@ -8,9 +8,9 @@ const isDev = process.env.NODE_ENV === 'development';
 
 module.exports = {
   entry: {
-    index: './src/pages/index/index.js',
-    about: './src/pages/about/about.js',
-    analytics: './src/pages/analytics/analytics.js',
+    index: './src/pages/index/index.ts',
+    about: './src/pages/about/about.ts',
+    analytics: './src/pages/analytics/analytics.ts',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -18,6 +18,15 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.ts(x?)$/,
+        exclude: /node_modules/,
+        use: [
+            {
+                loader: "ts-loader"
+            }
+        ]
+      },
       {
         test: /\.js$/,
         use: {loader: "babel-loader"},

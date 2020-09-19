@@ -35,6 +35,7 @@ type Committer = {
 }
 
 export type DayCountRow = {
+  dayNumber: number,
   day: string,
   count: number,
   percent: number

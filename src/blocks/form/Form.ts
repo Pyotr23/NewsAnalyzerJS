@@ -5,7 +5,7 @@ export default class Form extends BaseComponent{
 
   constructor(element: HTMLElement, submitHandler: EventListener){
     super(element);
-    this._searchInput = this.getElement().querySelector('.form__input');
+    this._searchInput = this._element.querySelector('.form__input');
     this.setSubmitHandler(submitHandler);
   }
 
