@@ -17,7 +17,9 @@ import { Article, NewsResponse } from '../../ts/types';
 const searchForm = <HTMLFormElement>document.querySelector('.form');
 const cardsNode = <HTMLElement>document.querySelector('.cards');
 const cardsContainer = <HTMLElement>cardsNode.querySelector('.cards__list');
-const cardTemplate = <HTMLElement>document.querySelector('#card-template').querySelector('.card');
+
+const cardTemplateElement = <HTMLTemplateElement>document.querySelector('#card-template');
+const cardTemplate = <HTMLTemplateElement>cardTemplateElement.content.querySelector('.card');
 
 const cardsButtonNode = <HTMLElement>document.querySelector('.button_place_cards');
 const noResultNode = <HTMLElement>document.querySelector('.no-result');
@@ -99,8 +101,8 @@ function showMoreNews(): void {
 }
 
 function init(): void {
-  const count = dataStorage.load(DISPLAYED_COUNT);
-  const news = dataStorage.load(ARTICLES);
+  const count = <number>dataStorage.load(DISPLAYED_COUNT);
+  const news = <Article[]>dataStorage.load(ARTICLES);
   const showedNews = news.slice(0, count);
   const showedCards = showedNews
     .map(n => new Card(cardTemplate).create(n));

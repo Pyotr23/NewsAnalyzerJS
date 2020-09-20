@@ -7,7 +7,7 @@ export default class Daily extends BaseComponent{
 
   constructor(element: HTMLElement){
     super(element);
-    this.monthNode = this._element.querySelector('#month');
+    this.monthNode = <HTMLElement>this._element.querySelector('#month');
   }
 
   setMonth(articles: Article[]){

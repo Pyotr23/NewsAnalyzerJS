@@ -13,7 +13,8 @@ import { Article, DayCountRow } from '../../ts/types';
 const digitsNode = <HTMLElement>document.querySelector('.digits');
 const dailyNode = <HTMLElement>document.querySelector('.daily');
 const tableNode = <HTMLElement>document.querySelector('.table');
-const tableRowTemplate = <HTMLElement>document.querySelector('#table-row-template').querySelector('.table-row');
+const rowTemplate = <HTMLTemplateElement>document.querySelector('#table-row-template');
+const tableRowTemplate = <HTMLElement>rowTemplate.content.querySelector('.table-row');
 const tableContainer = <HTMLElement>tableNode.querySelector('.table__container');
 
 const digits = new Digits(digitsNode);

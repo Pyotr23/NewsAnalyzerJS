@@ -11,9 +11,9 @@ export default class Card extends BaseComponent implements ITemplateElement{
   create({ source, title, description, publishedAt, url, urlToImage }: Article) {
     const author = source.name;
 
-    const newCard = <HTMLElement>this.getElement().cloneNode(true);
+    const newCard = <HTMLElement>this._element.cloneNode(true);
 
-    const linkNode = newCard.querySelector('.ref');
+    const linkNode = <HTMLElement>newCard.querySelector('.ref');
     linkNode.setAttribute('href', url);
 
     const imageNode = <HTMLElement>newCard.querySelector('.card__image');
@@ -22,16 +22,16 @@ export default class Card extends BaseComponent implements ITemplateElement{
       imageNode.setAttribute('src', require('../../images/cards/womanyellingcat.jpg'));
     };
 
-    const dateNode = newCard.querySelector('.card__text-date');
+    const dateNode = <HTMLElement>newCard.querySelector('.card__text-date');
     dateNode.textContent = getDateWithStringMonth(publishedAt);
 
-    const titleNode = newCard.querySelector('.card__title');
+    const titleNode = <HTMLElement>newCard.querySelector('.card__title');
     titleNode.textContent = title;
 
-    const textNode = newCard.querySelector('.card__text');
+    const textNode = <HTMLElement>newCard.querySelector('.card__text');
     textNode.textContent = description;
 
-    const sourceNode = newCard.querySelector('.card__source');
+    const sourceNode = <HTMLElement>newCard.querySelector('.card__source');
     sourceNode.textContent = author;
 
     return newCard;

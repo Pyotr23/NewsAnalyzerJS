@@ -16,6 +16,10 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/[name].[chunkhash].js'
   },
+  devtool: "source-map",
+  resolve: {
+      extensions: [".ts", ".tsx", ".js"]
+  },
   module: {
     rules: [
       {
@@ -26,6 +30,11 @@ module.exports = {
                 loader: "ts-loader"
             }
         ]
+      },
+      {
+        enforce: "pre",
+        test: /\.js$/,
+        loader: "source-map-loader"
       },
       {
         test: /\.js$/,

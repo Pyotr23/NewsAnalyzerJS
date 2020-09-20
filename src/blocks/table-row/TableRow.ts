@@ -10,13 +10,13 @@ export default class TableRow extends BaseComponent implements ITemplateElement 
   create({ day, count, percent }: DayCountRow){
     const newRow = <HTMLElement>this._element.cloneNode(true);
 
-    const dayNode = newRow.querySelector('.table-row__first-column');
+    const dayNode = <HTMLElement>newRow.querySelector('.table-row__first-column');
     dayNode.textContent = day;
 
-    const percentNode = newRow.querySelector('.table-row__shifter');
+    const percentNode = <HTMLElement>newRow.querySelector('.table-row__shifter');
     percentNode.setAttribute('style', `width: ${percent}%`);
 
-    const countNode = newRow.querySelector('#count');
+    const countNode = <HTMLElement>newRow.querySelector('#count');
     countNode.textContent = count.toString();
 
     this._element = newRow;

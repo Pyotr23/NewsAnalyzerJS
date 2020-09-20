@@ -15,19 +15,19 @@ export default class CommitCard extends BaseComponent implements ITemplateElemen
 
     const newCommitCard = <HTMLElement>this._element.cloneNode(true);
 
-    const dateNode = newCommitCard.querySelector('.commit-card__date');
+    const dateNode = <HTMLElement>newCommitCard.querySelector('.commit-card__date');
     dateNode.textContent = getDateWithStringMonth(date);
 
-    const avatarNode = newCommitCard.querySelector('.committer__avatar');
+    const avatarNode = <HTMLElement>newCommitCard.querySelector('.committer__avatar');
     avatarNode.setAttribute('src', avatar_url);
 
-    const nameNode = newCommitCard.querySelector('.committer__name');
+    const nameNode = <HTMLElement>newCommitCard.querySelector('.committer__name');
     nameNode.textContent = name;
 
-    const emailNode = newCommitCard.querySelector('.committer__mail');
+    const emailNode = <HTMLElement>newCommitCard.querySelector('.committer__mail');
     emailNode.textContent = email;
 
-    const messageNode = newCommitCard.querySelector('.commit-card__message');
+    const messageNode = <HTMLElement>newCommitCard.querySelector('.commit-card__message');
     messageNode.textContent = message;
 
     return newCommitCard;

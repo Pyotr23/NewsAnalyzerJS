@@ -8,8 +8,8 @@ export default class FormValidator{
   constructor(form: HTMLFormElement){
     this.form = form;
     [...this.elements] = this.getNotSubmitInputs();
-    this.form.addEventListener('input', (event: InputEvent) => this.handleInput(event));
-    this.submitButton = this.form.querySelector('[type="submit"]');
+    this.form.addEventListener('input', (event: Event) => this.handleInput(event));
+    this.submitButton = <HTMLFormElement>this.form.querySelector('[type="submit"]');
     this.setSubmitButtonState();
   }
 
@@ -29,7 +29,8 @@ export default class FormValidator{
     return this.elements.every(this.isValidate);
   }
 
-  private isValidate = (input: HTMLInputElement): boolean => {
+  private isValidate = (inp: HTMLElement, index?: number, array?: HTMLElement[]) => {
+    const input = <HTMLInputElement>inp;
     input.setCustomValidity("");
     if (input.validity.valueMissing) {
       input.setCustomValidity(VALIDATION_ERROR_MESSAGES.valueMissing);
@@ -38,14 +39,14 @@ export default class FormValidator{
     return input.checkValidity();
   }
 
-  private handleInput = (event: InputEvent): void  => {
+  private handleInput = (event: Event): void  => {
     this.setErrorContent(<HTMLInputElement>event.target);
     this.setSubmitButtonState();
   }
 
   private setErrorContent = (input: HTMLInputElement): void => {
     this.isValidate(input);
-    const errorElement = input.nextElementSibling;
+    const errorElement = <HTMLDivElement>input.nextElementSibling;
     errorElement.textContent = input.validationMessage;
   }
 }
