@@ -65,7 +65,11 @@ function fillCount(articles: Article[], rows: DayCountRow[], word: string){
 
 function fillPercent(rows: DayCountRow[]): void {
   const allMatchesCount = rows.reduce((sum, row) => sum + row.count, 0);
-  rows.forEach(row => row.percent = 100 - 100 / allMatchesCount * row.count);
+  rows.forEach(row => {
+    return row.percent = allMatchesCount === 0
+      ? 100
+      : 100 - 100 / allMatchesCount * row.count;
+  });
 }
 
 init();
